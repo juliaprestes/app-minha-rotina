@@ -1,0 +1,277 @@
+// Referencia
+// https://getbootstrap.com/docs/5.2/customize/color/
+
+:root {
+    --black: #000;
+    --white: #fff;
+    --blue-title: #40BBFF;
+    --blue: #0d6efd;
+    --blue-100-dark: #4D5968;
+    --blue-50: #EFEEF9;
+    --blue-100: #cfe2ff;
+    --blue-100-light: #40bcff3f;
+    --blue-200: #9ec5fe;
+    --blue-300: #6ea8fe;
+    --blue-400: #3B4AFF;
+    --blue-500: #0d6efd;
+    --blue-600: #0a58ca;
+    --blue-700: #005EB8;
+    --blue-800: #0024A9;
+    --blue-900: #021F65;
+
+    --green: #198754;
+    --green-100: #F1F4F2;
+    --green-200: #a3cfbb;
+    --green-300-h: #36D79F;
+    --green-400: #479f76;
+    --green-500: #198754;
+    --green-600: #389D85;
+    --green-700: #1E6F5C;
+    --green-800: #196150;
+    --green-900: #0A3C30;
+
+    --grey: #adb5bd;
+    --grey-100: #FAFAFA;
+    --grey-200: #e9ecef;
+    --grey-300: #dee2e6;
+    --grey-400: #ced4da;
+    --grey-500: #A5B3C4;
+    --grey-550: #617385;
+    --grey-600: #717171;
+    --grey-700: #293737;
+    --grey-800: #343a40;
+    --grey-900: #212529;
+
+    --red: #dc3545;
+    --red-100: #f8d7da;
+    --red-200: #f1aeb5;
+    --red-300: #ea868f;
+    --red-400: #e35d6a;
+    --red-500: #dc3545;
+    --red-600: #b02a37;
+    --red-700: #842029;
+    --red-800: #58151c;
+    --red-900: #58151c;
+
+    --purple-100:#9285f9;
+
+    --yellow: #ffc107;
+    --yellow-100: #fff3cd;
+    --yellow-200: #ffe69c;
+    --yellow-300: #ffda6a;
+    --yellow-400: #ffcd39;
+    --yellow-500: #ffc107;
+    --yellow-600: #cc9a06;
+    --yellow-700: #997404;
+    --yellow-800: #664d03;
+    --yellow-900: #332701;
+}
+
+// Cor primária: --green-800
+$primary: var(--green-700);
+$secondary: var(--green-800);
+$tertiary: var(--green-600);
+$success: var(--green);
+$danger: var(--red);
+$warning: var(--yellow);
+$shadow: var(--grey-400);
+$grey-600: var(--grey-600);
+$green-300-h: var(--green-300-h);
+$green-600: var(--green-600);
+$highlight: var(--green-800);
+
+// Cor do texto
+.text-primary { color: $primary }
+
+.text-secondary { color: $secondary }
+
+.text-tertiary { color: $tertiary }
+
+.text-success { color: $success }
+
+.text-danger { color: $danger }
+
+.text-warning { color: $warning }
+
+.text-highlight { color: $highlight };
+
+.text-green-h { color: var(--green-300-h) }
+
+.text-green-600 { color: var(--green-600) }
+
+.text-green-700 { color: var(--green-700) }
+
+.text-green-800 { color: var(--green-800) }
+
+.text-green-900 { color: var(--green-900) }
+
+.text-grey-500 { color: var(--grey-500) }
+
+.text-grey-700 { color: var(--grey-700) }
+
+.text-grey-800 { color: var(--grey-800) }
+
+.text-white { color: var(--white) }
+
+.text-black { color: var(--black) }
+
+.text-green { color: var(--green) }
+
+.text-blue-title { color: var(--blue-title) }
+
+.text-blue-100-dark { color: var(--blue-100-dark) }
+
+.text-blue { color: var(--blue) }
+
+.text-blue-300{ color: var(--blue-300) }
+
+.text-blue-400{ color: var(--blue-400) }
+
+.text-blue-700 { color: var(--blue-700) }
+
+.text-blue-800 { color: var(--blue-800) !important}
+
+.text-blue-900 { color: var(--blue-900) }
+
+.text-purple-100 { color: var(--purple-100) }
+
+
+.text-yellow { color: var(--yellow) }
+
+.text-grey { color: var(--grey) }
+
+.text-grey-700 { color: var(--grey-700) }
+
+.text-grey-500 { color: var(--grey) }
+
+.text-grey-600 { color: var(--grey-600) }
+
+// Cor de fundo
+.bg-primary { background-color: $primary }
+
+.bg-secondary { background-color: $secondary }
+
+.bg-success { background-color: $success }
+
+.bg-danger { background-color: $danger }
+
+.bg-warning { background-color: $warning }
+
+.bg-white { background-color: var(--white) }
+
+.bg-black { background-color: var(--black) }
+
+.bg-grey { background-color: var(--grey) }
+
+.bg-grey-100 { background-color: var(--grey-100) }
+
+.bg-grey-400 { background-color: var(--grey-400); }
+
+.bg-grey-500 { background-color: var(--grey-500) }
+
+.bg-yellow { background-color: var(--yellow) }
+
+.bg-red { background-color: var(--red) }
+
+.bg-blue { background-color: var(--blue) }
+
+.bg-blue-50 { background-color: var(--blue-50); }
+
+.bg-blue-100-light { background-color: var(--blue-100-light) }
+
+.bg-blue-100 { background-color: var(--blue-title) }
+
+.bg-blue-400 { background-color: var(--blue-400) }
+
+.bg-blue-700 { background-color: var(--blue-700) }
+
+.bg-blue-800 { background-color: var(--blue-800) }
+
+.bg-blue-900 { background-color: var(--blue-900) }
+
+.bg-green { background-color: var(--green) }
+
+.bg-green-100 { background-color: var(--green-100) }
+
+.bg-green-200 { background-color: var(--green-200) }
+
+.bg-green-300-h { background-color: var(--green-300-h) }
+
+.bg-green-600 { background-color: var(--green-600) }
+
+.bg-green-700 { background-color: var(--green-700) }
+
+.bg-green-900 { background-color: var(--green-900) }
+
+.bg-tertiary { background-color: $tertiary }
+
+.bg-transparent { background-color: transparent }
+
+// Hover
+.hover {
+    &-text-green-h {
+        transition: 0.3s;
+
+        &:hover {
+            color: var(--green-300-h);
+        }
+    }
+
+    &-text-primary {
+        transition: 0.3s;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    &-bg-primary {
+        transition: 0.3s;
+
+        &:hover {
+            background: $primary;
+        }
+    }
+}
+
+// Border
+.border {
+    border: 1px solid;
+
+    &--grey {
+        border-color: var(--grey-300)
+    }
+
+    &--white {
+        border-color: var(--white) !important;
+    }
+}
+
+.border-right {
+    border-right: 1px solid;
+
+    &--grey-100 {
+        border-color: var(--grey-300)
+    }
+
+    &--grey-550 {
+        border-color: var(--grey-550);
+    }
+
+    &--white {
+        border-color: var(--white)
+    }
+}
+
+.border-bottom {
+    border-bottom: 1px solid;
+
+    &--grey-100 {
+        border-color: var(--grey-300)
+    }
+}
+
+.border-primary,
+.btn.border-primary {
+    border: 1px solid $primary;
+}
