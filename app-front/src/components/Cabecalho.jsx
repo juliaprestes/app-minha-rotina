@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import imagem from "../assets/img/rotimy.svg";
 import "../assets/css/componentes/cabecalho.css";
 
@@ -6,29 +7,29 @@ const Cabecalho = () => {
   return (
     <header className="cabecalho">
       <div>
-        <a href="/" className="">
+        <Link to="/" className="">
           <img className="cabecalho__logo" src={imagem} alt="Logo Rotimy" />
           <h1 className="cabecalho__titulo">Minha Rotina</h1>
-        </a>
+        </Link>
       </div>
       <div>
         <nav className="">
           <ul className="">
             <li>
-              <a href="/" className="inicio">
+              <Link to="/" className="inicio">
                 Início
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/" className="sobre">
+              <Link to="/sobre" className="sobre">
                 Sobre
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a href="/login" className="entrar">
+              <Link to="/login" className="entrar">
                 Entrar
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
