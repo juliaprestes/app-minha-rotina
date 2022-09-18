@@ -4,18 +4,25 @@ import moment from 'moment'
 import Config from '../../config'
 
 export default async function createUser(request: Request, response: Response) {
-  const { name, email, password } = request.body
+  const { nome, email, senha, tipo } = request.body
 
   const config = await Config.getInstance()
   const banco = config.banco
 
   if (!banco) {
-    return response
-      .status(500)
-      .json({ key: 'internalServerError', msg: 'Erro interno do servidor' })
+    return response.status(500).json({
+      key: 'internalServerError',
+      msg: 'Erro interno do servidor',
+    })
   }
 
-  if (!name) {
+  if (tipo !== 1 && tipo !== 2) {
+    return response
+      .status(422)
+      .json({ key: 'invalidType', msg: 'tipo inválido' })
+  }
+
+  if (!nome) {
     return response
       .status(422)
       .json({ key: 'requiredName', msg: 'Nome é obrigatório' })
@@ -25,7 +32,7 @@ export default async function createUser(request: Request, response: Response) {
       .status(422)
       .json({ key: 'requiredEmail', msg: 'E-mail é obrigatório' })
   }
-  if (!password) {
+  if (!senha) {
     return response
       .status(422)
       .json({ key: 'requiredPassword', msg: 'Senha é obrigatório' })
@@ -45,14 +52,14 @@ export default async function createUser(request: Request, response: Response) {
   const now = moment().toDate()
 
   const salt = await bcrypt.genSalt(12)
-  const hash = await bcrypt.hash(password, salt)
+  const hash = await bcrypt.hash(senha, salt)
 
   await banco.collection('usuarios').insertMany([
     {
-      name,
+      nome,
       email,
       hash: hash,
-      nivelAcesso: 1,
+      nivelAcesso: tipo,
       createdAt: now,
     },
   ])

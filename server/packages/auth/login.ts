@@ -47,7 +47,15 @@ export default async function login(request: Request, response: Response) {
       .json({ key: 'invalidPassword', msg: 'Senha incorreta' })
   }
 
-  const token = jwt.sign({ id: existentUser._id }, secret)
+  const token = jwt.sign(
+    {
+      id: existentUser._id,
+      nome: existentUser.nome,
+      email: existentUser.email,
+      nivelAcesso: existentUser.nivelAcesso,
+    },
+    secret
+  )
 
   return response.status(200).json({
     token: token,
