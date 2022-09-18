@@ -1,0 +1,14 @@
+{
+  "server": {
+    "port": 3001,
+    "addres": "localhost"
+  },
+  "banco": {
+    "url": "cluster0.tsteixg.mongodb.net/?retryWrites=true&w=majority",
+    "pass": "FQRhWDRuyM3HV8Yk",
+    "user": "filipe"
+  },
+  "security": {
+    "secret": "disuhadhpsdoasdyuiosd"
+  }
+}
