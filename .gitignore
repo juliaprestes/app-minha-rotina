@@ -1,2 +1,1 @@
-/server/node_modules
-/app-front/node_modules
+.prettierrc.json
