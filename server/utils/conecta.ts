@@ -3,7 +3,6 @@ import Config from "../config";
 
 export default async function conectaBanco() {
   const connectionInfo = (await Config.getInstance()).configuration.banco;
-  console.log("connectionInfo", connectionInfo);
   const banco = `mongodb+srv://${connectionInfo.user}:${connectionInfo.pass}@${connectionInfo.url}`;
   const client = new MongoClient(banco);
 
