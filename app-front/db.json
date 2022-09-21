@@ -1,0 +1,32 @@
+{
+  "categorias": [
+    {
+      "id": "home",
+      "nome": "inicio",
+      "subcategorias": ["boas-vindas", "metodologia"]
+    },
+    {
+      "id": "comportamento",
+      "nome": "comportamento",
+      "subcategorias": ["treinamento", "educacao"]
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Sua criança mais feliz",
+      "metadescription": "Lorem ipsum dolor sit amet",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis erat ac nisl finibus blandit. Praesent eget consequat felis. Curabitur egestas, dolor vel sodales sollicitudin, enim velit molestie mauris, feugiat molestie justo lectus non felis. Pellentesque et justo placerat, commodo metus ut, porttitor velit. I",
+      "categoria": "inicio",
+      "subcategoria": "boas-vindas"
+    },
+    {
+      "id": 2,
+      "title": "Nossa Metodologia",
+      "metadescription": "Lorem ipsum dolor sit amet",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis erat ac nisl finibus blandit. Praesent eget consequat felis. Curabitur egestas, dolor vel sodales sollicitudin, enim velit molestie mauris, feugiat molestie justo lectus non felis. Pellentesque et justo placerat, commodo metus ut, porttitor velit. I",
+      "categoria": "inicio",
+      "subcategoria": "higiene"
+    }
+  ]
+}
