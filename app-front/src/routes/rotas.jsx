@@ -5,6 +5,7 @@ import CadastroUsuario from "../pages/CadastroUsuario/";
 import Login from "../pages/Login/";
 import Pagina404 from "../pages/Pagina404/";
 import Cabecalho from "../components/Cabecalho";
+import Footer from "../components/Footer";
 import AndamentoRotina from "../pages/AndamentoRotina/";
 import Atividades from "../pages/Atividades/";
 import CadastroDependentes from "../pages/CadastroDependentes/";
@@ -64,6 +65,7 @@ function Rotas() {
           <InicialResponsavel />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }

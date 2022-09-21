@@ -4,27 +4,21 @@ import imagem from "../assets/img/rotimy.svg";
 
 const Cabecalho = () => {
   return (
-    <header className="">
+    <header className="header-cabecalho">
       <div>
         <Link to="/" className="">
-          <img className="" src={imagem} alt="Logo Rotimy" />
-          <h1 className="">Minha Rotina</h1>
+          <img className="img-cabecalho" src={imagem} alt="Logo Rotimy" />
+          <h1 className="titulo-cabecalho">Minha Rotina</h1>
         </Link>
       </div>
       <div>
-        <nav className="">
+        <nav className="menu-opcoes">
           <ul className="">
             <li>
               <Link to="/" className="inicio">
                 Início
               </Link>
             </li>
-            <li>
-              <Link to="/sobre" className="sobre">
-                Sobre
-              </Link>
-            </li>
-
             <li>
               <Link to="/login" className="entrar">
                 Entrar
