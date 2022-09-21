@@ -8,7 +8,7 @@ const Cabecalho = () => {
       <div>
         <Link to="/" className="">
           <img className="img-cabecalho" src={imagem} alt="Logo Rotimy" />
-          <h1 className="titulo-cabecalho">Minha Rotina</h1>
+          <h1 className="titulo-cabecalho">Minha Rotina2</h1>
         </Link>
       </div>
       <div>
