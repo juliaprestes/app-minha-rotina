@@ -1,0 +1,48 @@
+$preto-Ecad: #181a1f;
+$vermelho-Ecad: #fc4d40;
+$azul-Ecad: #005eff;
+$darker-azul-Ecad: #13346C;
+$ocre-Ecad: #a89157;
+$ocre-light-Ecad: #DCD3BC;
+$ocre-darker-Ecad: #6B5C2E;
+$cinza-Ecad: #f8f8f8;
+$cinza2-Ecad: #888;
+$cinza3-Ecad: #383838;
+$cinza4-Ecad: #323234;
+$cinza5-Ecad: #F4F4F4;
+$cinza6-Ecad: #CCC;
+$cinza7-Ecad: #F1F1F1;
+$verde-Ecad: #73AA13;
+$verde-Ecad-hover: #3D570F;
+
+$color-primary: $preto-Ecad;
+$color-primary-contrast: $ocre-Ecad;
+$color-secondary: $cinza-Ecad;
+$color-tertiary: $azul-Ecad;
+$color-error: $vermelho-Ecad;
+$color-info: #069;
+
+* { margin: 0px; text-decoration: none; padding: 0px; border: 0px; font-weight: normal; font-size: 100%; list-style: none; line-height: 1; outline: 0px; background: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; -ms-font-smoothing: antialiased; -o-font-smoothing: antialiased; font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
+body { overflow-x:hidden }
+input, textarea, select, button { font: normal 16px 'Manrope', sans-serif; appearance: none; -webkit-appearance: none; border-radius: 0px; transition: 0.4s; }
+select, button, input[type='checkbox'] { cursor: pointer; }
+.textDisabled { color: #E6E6E6 }
+input[type=checkbox] { position: absolute; top: 26px; left: 25px; width: 20px; height: 20px; border: 2px solid $ocre-Ecad; border-radius: 3px; }
+input[type=checkbox]:checked { background-color: $ocre-Ecad; }
+input[type=checkbox]:checked::before { position: absolute; top: 50%; left: 50%; font-family: 'Font Awesome 5 Pro'; transform: translate(-50%, -50%); color: #fff; font-size: 12px; content: '\f00c'; }
+label:focus-within input,
+label:focus-within select,
+label:focus-within textarea { border-color: $ocre-Ecad !important; }
+.container { position: relative; display: block; width: 100%; max-width: 1444px; height: auto; margin: 0px auto; }
+.wrapper { display: flex; }
+
+@media (max-width: 1444px){
+    /* global */
+    .container { max-width: 100% !important; padding: 0px 35px; }
+}
+
+@media (max-width: 680px){
+    /* global */
+    .container { padding: 0px 25px; }
+}

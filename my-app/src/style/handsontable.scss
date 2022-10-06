@@ -1,0 +1,54 @@
+.htMenu.htContextMenu {
+  z-index: 9999;
+}
+
+.htInvalid,
+.htRequired,
+.htDiaComplemento {
+  background-position: left;
+  font-weight: bolder;
+}
+
+.htInvalid,
+.htCore tr td.htDiaComplemento,
+.htCore tr td.htRequired {
+  background-position-y: 3px !important;
+}
+
+.handsontable .htInvalid {
+  background-color: #fff !important;
+  padding-left: 18px !important;
+}
+
+.htInvalid,
+.handsontable td.htInvalid {
+  background-image: url(~src/assets/images/iconesExcel.png);
+  background-repeat: no-repeat;
+  background-color: transparent !important;
+}
+
+.htDiaComplemento,
+.htCore tr td.htDiaComplemento {
+  background: url(~src/assets/images/iconesExcel_3.png) no-repeat;
+  color: rgb(35, 173, 227);
+}
+
+.htRequired,
+.htCore tr td.htRequired {
+  background: url(~src/assets/images/iconesExcel_2.png) no-repeat;
+  color: rgb(255, 209, 69);
+}
+
+span.htInvalid,
+span.htDiaComplemento,
+span.htRequired {
+  display: block;
+  float: left;
+  width: 16px;
+  height: 16px;
+  padding-right: 10px;
+}
+
+span.htInvalid {
+  background-position-y: 1px !important;
+}

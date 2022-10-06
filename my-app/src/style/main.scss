@@ -1,0 +1,496 @@
+@import "src/style/theme.module";
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@font-face {
+  font-family: "GTWalsheimProBold";
+  src: url("../fonts/gt-walsheim-bold.eot") format("eot"),
+    url("../fonts/GTWalsheimProBold.ttf") format("truetype"),
+    url("../fonts/GTWalsheimProBold.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GTWalsheimProMedium";
+  src: url("../fonts/gt-walsheim-medium.eot?#iefix") format("eot"),
+    url("../fonts/GTWalsheimProMedium.ttf") format("truetype"),
+    url("../fonts/GTWalsheimProMedium.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GTWalsheimProRegular";
+  src: url("../fonts/gt-walsheim-regular.eot?#iefix") format("eot"),
+    url("../fonts/GTWalsheimProRegular.ttf") format("truetype"),
+    url("../fonts/GTWalsheimProRegular.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Walsheim Bold';
+  src: url('../fonts/GTWalsheim-Bold.woff2') format('woff2'),
+      url('../fonts/GTWalsheim-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+.MuiInputLabel-formControl {
+  font-size: 1.2rem !important;
+  font-family: GTWalsheimProBold !important;
+  color: #000 !important;
+}
+
+.MuiInputBase-input {
+  font-size: 0.9375rem !important; /* 15px */
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+}
+
+.MuiSvgIcon-root {
+  width: 0.6em !important;
+  height: 0.6em !important;
+  // color: $azul-Ecad;
+}
+
+.MuiFormHelperText-root {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.MuiFilledInput-root {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
+}
+
+.MuiInputBase-root {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 20px 0px;
+  padding: 4px 12px 8px 12px;
+}
+
+.MuiFormHelperText-contained {
+  margin: 8px 0 0 0 !important;
+}
+
+@media (min-width: 960px) {
+  .align-desktop {
+    padding-left: 24px;
+  }
+}
+
+.button-file-Ecad input.MuiInputBase-input {
+  display: none !important;
+}
+
+.button-default-Ecad {
+  background-color: $azul-Ecad;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+  font-family: GTWalsheimProMedium;
+  border-radius: 4px;
+  padding: 11px 24px;
+  color: white;
+  cursor: pointer;
+  line-height: 40px;
+}
+@media (max-width: 960px) {
+  .button-default-Ecad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: normal;
+  }
+}
+.button-default-Ecad:hover {
+  background-color: rgb(0, 65, 178);
+}
+
+@media (min-width: 960px) {
+  .img-coluna-2 {
+    width: 355px;
+    height: 644px;
+  }
+}
+
+.grid-container-principal {
+  width: 100%;
+}
+@media (min-width: 960px) {
+  .grid-container-principal {
+    width: 70% !important;
+  }
+}
+
+.grid-container-secundaria {
+  width: 100%;
+}
+@media (min-width: 960px) {
+  .grid-container-secundaria {
+    width: 30% !important;
+    padding-left: 24px;
+  }
+}
+
+.nav-links-redes-mobile {
+  list-style: none;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-end;
+  justify-content: center;
+}
+.svg-icone-facebook {
+  width: 8px;
+  height: 16px;
+}
+.svg-icone-instagram {
+  width: 18px;
+  height: 17px;
+}
+.svg-icone-linkedin {
+  width: 18px;
+  height: 15px;
+}
+.svg-icone-youtube {
+  width: 20px;
+  height: 17px;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+.logo-img {
+  width: 64px;
+  height: 68px;
+}
+@media (min-width: 1024px) {
+  .logo-img {
+    width: 160px;
+    height: 116px;
+  }
+}
+@media (min-width: 1440px) {
+  .logo-img {
+    width: 180px;
+    height: 120px;
+  }
+}
+@media (min-width: 1600px) {
+  .logo-img {
+    width: 180px;
+    height: 120px;
+  }
+}
+
+.menu-item-text {
+  color: #f2f2f7;
+  font-family: "GTWalsheimProMedium";
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+
+// .MuiAlert-root .MuiSvgIcon-root{
+// 	color:rgb(255, 255, 255);
+// }
+.MuiAlert-standardWarning .MuiAlert-icon {
+  color: #a89157;
+}
+#cliente-root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  // @media screen and (max-width: 720px) {
+  //   height: 100%;
+  // }
+  //   @media screen and (min-width: 768px) {
+  //     height: 100vh;
+  //   }
+}
+.banner-home-container {
+  height: 352px;
+  background-repeat: no-repeat;
+  margin: 24px 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  @media screen and (max-width: 768px) {
+    background-position: center;
+  }
+  @media screen and (min-width: 769px) {
+    background-position: left;
+  }
+}
+.banner-home-title {
+  color: #ffffff;
+  padding: 40px;
+  @media screen and (max-width: 768px) {
+    font-size: 22px !important;
+  }
+  @media screen and (min-width: 769px) {
+    font-size: 44px;
+  }
+}
+.card-item {
+  @media screen and (min-width: 768px) {
+    //height: 300px;
+  }
+}
+// [href$="http://localhost:9001/"] {
+//   #cliente-root {
+//     background-color: #181a1f;
+//   }
+// }
+// div#cliente-root[href$="http://localhost:9001/"] {
+//   background-color: #181a1f;
+// }
+#foto-login {
+  width: 100%; //396px
+  height: 100%;
+}
+.react-select__menu {
+  position: absolute !important;
+  z-index: -1 !important;
+}
+.react-select__control,
+.css-2b097c-container {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+  border-color: #ffffff !important;
+}
+input[type="radio"] {
+  width: 22px;
+  height: 20px;
+}
+
+#date-picker-inline-label {
+  position: absolute;
+  top: 8px;
+  z-index: 99;
+  left: 12px;
+}
+#date-picker-inline {
+  padding: 42px 12px 10px;
+  @media screen and (min-width: 768px) {
+    padding: 27px 12px 10px;
+  }
+}
+label + .MuiInput-formControl {
+  margin-top: 0 !important;
+}
+
+/* 1792x828px at 326ppi */
+// @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+//   .MuiBox-root-43 {
+//     flex-direction: column !important;
+//   }
+// }
+/* 2436x1125px at 458ppi */
+// @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+//   .MuiBox-root-43 {
+//     flex-direction: column !important;
+//   }
+// }
+/* 2688x1242px at 458ppi */
+// @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+//   .MuiBox-root-43 {
+//     flex-direction: column !important;
+//   }
+// }
+
+@media screen and (max-width: 767px) {
+  .borda-box > div.MuiGrid-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .borda-box > div.MuiGrid-item:nth-last-child(1) {
+    border-bottom: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .borda-box > div.MuiGrid-item:nth-child(2),
+  .borda-box > div.MuiGrid-item:nth-child(3),
+  .borda-box > div.MuiGrid-item:nth-child(5),
+  .borda-box > div.MuiGrid-item:nth-child(6) {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .borda-box > div.MuiGrid-item:nth-child(2),
+  .borda-box > div.MuiGrid-item:nth-child(3),
+  .borda-box > div.MuiGrid-item:nth-child(4) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+.react-select__menu {
+  background-color: red !important;
+}
+.btnCardProgMusical {
+  margin-top: 12px !important;
+}
+
+//AC
+.historicoAceito {
+  background-color: #393 !important;
+}
+//EV
+.historicoEnviado {
+  background-color: #069 !important;
+}
+//CA
+.historicoCancelado {
+  background-color: #d2d2d2 !important;
+}
+//RC
+.historicoRejeitado {
+  background-color: #fc4d40 !important;
+}
+//EA
+.historicoEmAnalise {
+  background-color: #a89157 !important;
+}
+
+// Calendário
+body .pika-single:not(:nth-last-of-type(1)) {
+  display: none;
+}
+
+body .pika-single {
+  border: none;
+  font-family: 'Manrope';
+  color: #000;
+
+  .pika-lendar {
+    width: 450px; margin: 0; height: auto; padding: 5px 5px 30px 5px; background-color: #fff; border-radius: 8px; box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+    
+    @media (max-width: 510px){
+      width: 100%;
+    }
+
+    .pika-title {
+      width: 100%;
+      height: 54px;
+      background-color: #F5F2EB;
+      border-radius: 6px 6px 0px 0px;
+
+      .pika-label {
+        font-size: 17px;
+        background: none;
+        font-family: 'GT Walsheim Bold';
+      }
+
+      .pika-prev, .pika-next, .pika-label {
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+
+      button {
+        width: 24px; height: 24px; border-radius: 5px; background-color: $ocre-Ecad;
+        background-image: url('../assets/svgs/arrow.svg');
+        background-size: 6px;
+        opacity: 1;
+        text-indent: -9999px;
+      }
+
+      button.pika-prev {
+        margin-left: 15px;
+        transform: rotateY(180deg) translate(0, -50%) !important;
+      }
+
+      button.pika-next {
+        margin-right: 15px;
+      }
+    }
+
+    .pika-table {
+      tr {
+        display: grid;
+        text-align: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+
+      th {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        margin-left: 10px;
+
+        @media (max-width: 510px){
+          margin-left: 0;
+        }
+      }
+      
+      thead {
+        th {
+          color: $ocre-Ecad;
+          font-weight: 800;
+        }
+      }
+
+      tbody {
+        td.is-selected .pika-button {
+          background-color: $ocre-Ecad; border-radius: 40px; color: #fff !important;
+          box-shadow: none;
+        }
+
+        .pika-button {
+          color: $cinza3-Ecad;
+          font-size: 14px;
+          padding: 0;
+          background: none;
+          text-align: center;
+          height: 40px;
+          width: 40px;
+          line-height: 40px;
+          margin-left: 10px;
+
+          &:hover {
+            background-color: $ocre-Ecad; border-radius: 40px; color: #fff !important;
+          }
+        }
+
+        td:nth-last-of-type(1) .pika-button {
+          color: $ocre-Ecad;
+        }
+      }
+    }
+  }
+}
+body .pika-single.is-bound {
+  box-shadow: none;
+  background: none;
+}

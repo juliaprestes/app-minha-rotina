@@ -1,0 +1,26 @@
+.text-orange{
+    color: #E8C64A;
+}
+
+.text-blue{
+    color: #3065AC;
+}
+
+.text-white {
+    color: #FFFFFF;
+}
+
+.text-button{ 
+    color:#7C8F2E;
+}
+.bg-amarelo{
+    background-color: #E8C64A;
+}
+
+.bg-azul{
+    background-color: #3065AC;
+}
+
+.bg-azul-claro {
+    background-color: #518DDB;
+}

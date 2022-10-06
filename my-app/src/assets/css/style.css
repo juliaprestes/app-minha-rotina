@@ -1,0 +1,101 @@
+*{  
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    text-decoration: none
+}
+
+/*DISPLAY FLEX */
+
+.flex {
+    display: flex;       
+}
+
+.flex-between{
+    justify-content: space-between;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+/*PADDING*/
+
+.py-lg {
+    padding-top: 1.5rem; 
+    padding-bottom: 1.5rem; 
+}
+
+.py-xl {
+    padding-top: 3rem; 
+    padding-bottom: 3rem; 
+}
+
+.pb-sm{
+    padding-bottom: 0.5rem;
+}
+
+.pb-md{
+    padding-bottom: 1rem;
+}
+
+.pb-lg{
+    padding-bottom: 2rem;
+}
+
+/*FOOTER*/
+
+.container{
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*ALINHAMENTOS*/
+
+.row-reverse{
+    flex-direction: row-reverse;
+}
+
+.botao-redondo{
+    background-color: #BCDB3B;
+    width: 180px;
+    height: 50px;
+    border-radius: 50px;   
+    font-weight: 800;
+
+}
+
+.input-rounded{
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    height: 50px;
+    padding: 20px;
+}
+
+.box-shadow{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.text-shadow{
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Medias Query */
+
+@media (min-width: 1530px) {
+    .content{
+        min-height: 575px;
+      
+    }   
+}
+@media (min-width: 1910px) {
+    .content{
+        min-height: 791px;      
+    }   
+}

@@ -1,0 +1,25 @@
+.header-cabecalho{
+    padding: 30px;
+}
+
+.header-cabecalho__link{
+    gap: 20px
+}
+
+.titulo-cabecalho{
+    font-size: 2rem;
+}
+
+.img-cabecalho{
+    width: 3rem;
+}
+
+.menu-opcoes{
+    list-style: none;
+    display: flex;
+    font-size: 1.6rem;
+}
+
+.gap{
+    gap: 20px;
+}

@@ -1,0 +1,31 @@
+.item-lista {
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+}
+
+.img-principal {
+    width: 560px;
+}
+
+.item-lista__direita{
+    width: 30%
+}
+
+.titulo{
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.descricao{
+    padding-bottom: 20px;
+}
+
+.link{
+    font-style: italic;
+}
+
+.titulo, .descricao, .link{
+    font-weight: 900;
+}
