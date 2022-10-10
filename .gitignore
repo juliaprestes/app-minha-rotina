@@ -1,2 +1,4 @@
 /.prettierrc.json
 /.vscode
+server/package-lock.json
+my-app/package-lock.json
