@@ -6,6 +6,8 @@ import Config from '../../config'
 export default async function createUser(request: Request, response: Response) {
   const { nome, email, senha, tipo } = request.body
 
+  console.log('criando usuario: ', request.body)
+
   const config = await Config.getInstance()
   const banco = config.banco
 

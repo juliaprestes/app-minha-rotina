@@ -30,11 +30,11 @@ export default async function login(request: Request, response: Response) {
     .collection('usuarios')
     .findOne({ email: email })
 
-  console.log('existentUser', existentUser)
+
   if (!existentUser) {
     return response
       .status(422)
-      .json({ key: 'invalidEmail', msg: 'Email não encontrado' })
+      .json({ key: 'invalidEmail', msg: 'Email inválido' })
   }
 
   const { hash } = existentUser
