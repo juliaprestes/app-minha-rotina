@@ -1,10 +1,8 @@
-import EventEmitter from "events";
 import { Toast } from "primereact/toast";
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { login } from "../../api/api";
 //import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import useAsync from "../../utils/useAsync";
 import "./toast.css";
 
 const Login = () => {
@@ -13,7 +11,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   //const loginHook = useAsync(loginFunction, false);
-  const input = document.querySelector("input");
   const toast = useRef<any>(null);
 
   async function loginFunction(event: React.FormEvent<Element>) {
@@ -136,13 +133,16 @@ const Login = () => {
           <Link className="py-lg text-white text-shadow" to="/">
             Esqueci minha senha →
           </Link>
-          <button
-            className="#entrar botao-redondo box-shadow text-button"
-            //onClick={loginHook.execute}
-            id="entrar"
-          >
-            Entrar
-          </button>
+          <Link to="/selecionarPerfil">
+            <button
+              className="#entrar botao-redondo box-shadow text-button"
+              //onClick={loginHook.execute}
+              id="entrar"
+            >
+              Entrar
+            </button>
+          </Link>
+
           <Link className="py-lg text-white text-shadow" to="/cadastro">
             Não possui uma conta →
           </Link>

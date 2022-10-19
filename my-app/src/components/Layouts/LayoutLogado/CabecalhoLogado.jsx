@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import imagem from "../assets/img/rotimy.svg";
-import "../assets/css/components/cabecalho.css";
+import imagem from "../../../assets/img/rotimy.svg";
+import "../../../assets/css/components/cabecalho.css";
 
 const Cabecalho = () => {
   return (
@@ -16,18 +16,7 @@ const Cabecalho = () => {
       </div>
       <div>
         <nav>
-          <ul className="menu-opcoes gap">
-            <li>
-              <Link to="/" className="text-orange">
-                Início
-              </Link>
-            </li>
-            <li>
-              <Link to="/login" className="text-orange">
-                Entrar
-              </Link>
-            </li>
-          </ul>
+          <ul className="menu-opcoes gap"></ul>
         </nav>
       </div>
     </header>

@@ -1,0 +1,78 @@
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+    
+.text-xxsmm{
+    font-size: 0.6rem;
+}
+
+.text-xxsm{
+    font-size: 0.8rem;
+}
+
+.text-xsm {
+    font-size: 0.9rem;
+}
+
+.text-sm{
+    font-size: 1rem;
+}
+
+.text-md{
+    font-size: 1.2rem;
+}
+
+.text-xxmd {
+    font-size: 1.4rem;
+}
+
+.text-xmd {
+    font-size: 1.6rem;
+}
+
+.text-lg {
+    font-size: 2.1rem;
+}
+
+.text-xxl {
+    font-size: 3rem;
+}
+
+.text-xlg {
+    font-size: 5rem;
+}
+
+
+.underline {
+    text-decoration: underline;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.font-text-bold {
+    font-weight: 700;
+}
+
+.font-text-black {
+   font-weight: 900;
+}

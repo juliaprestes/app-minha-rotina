@@ -8,7 +8,7 @@ import Atividades from "../pages/Atividades/";
 import CadastroDependentes from "../pages/CadastroDependentes/";
 import CadastroRotina from "../pages/CadastroRotina";
 import DadosUsuario from "../pages/DadosUsuario/";
-import EscolhaPerfil from "../pages/EscolhaPerfil";
+import SelecionarPerfil from "../pages/EscolhaPerfil";
 import InformacoesDependente from "../pages/InformacoesDependente/";
 import InicialDependente from "../pages/InicialDependente";
 import Rotinas from "../pages/Rotinas";
@@ -32,7 +32,7 @@ function Rotas() {
           <Route path="/cadastroDependente" element={<CadastroDependentes />} />
           <Route path="/cadastroRotina" element={<CadastroRotina />} />
           <Route path="/minhasInformacoes" element={<DadosUsuario />} />
-          <Route path="/escolherPerfil" element={<EscolhaPerfil />} />
+          <Route path="/selecionarPerfil" element={<SelecionarPerfil />} />
           <Route
             path="/informacoesDependente"
             element={<InformacoesDependente />}

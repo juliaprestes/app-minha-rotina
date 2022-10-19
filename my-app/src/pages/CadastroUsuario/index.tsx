@@ -63,19 +63,16 @@ const Cadastrar = () => {
               onChange={handleChangePassword}
             />
           </div>
-
-          <Link className="py-lg text-white text-shadow" to="/">
-            Esqueci minha senha →
-          </Link>
-          <button
-            className="botao-redondo box-shadow text-button"
-            onClick={createUserHook.execute}
-          >
-            Cadastrar
-          </button>
-          <Link className="py-lg text-white text-shadow" to="/cadastro">
-            Não possui uma conta →
-          </Link>
+          <div className="my-xl">
+            <Link to="/login">
+              <button
+                className="botao-redondo box-shadow text-button "
+                onClick={createUserHook.execute}
+              >
+                Cadastrar
+              </button>
+            </Link>
+          </div>
         </div>
       </section>
     </body>
