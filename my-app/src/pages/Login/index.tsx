@@ -1,58 +1,46 @@
-import { Toast } from "primereact/toast";
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { login } from "../../api/api";
+import sendToast from "../../components/Layouts/LayoutToast/sendToast";
+import { redirect } from "react-router-dom";
 //import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import "./toast.css";
 
 const Login = () => {
   //const { executeRecaptcha } = useGoogleReCaptcha();
   //const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //const loginHook = useAsync(loginFunction, false);
   const toast = useRef<any>(null);
-
   async function loginFunction(event: React.FormEvent<Element>) {
     event.preventDefault();
     const loginResponse = await login(email, password);
     console.log("loginResponse", loginResponse);
 
     if (email === "" || password === "") {
-      toast.current.show({
-        severity: "warn",
-        summary: "Favor informar Login e Senha",
+      sendToast({
+        severity: "error",
+        summary: "Existem erros de validação",
+        detail: "Favor informar Login e Senha",
       });
       return;
     }
 
-    document.dispatchEvent(
-      new CustomEvent<{ severity: string; summary: string; detail: string }>(
-        "toast",
-        {
-          detail: {
-            severity: "success",
-            summary: "Success Message",
-            detail: "Order submitted",
-          },
-        }
-      )
-    );
     // validar loginResponse
     if (loginResponse.token && loginResponse.key === "loginSuccessfully") {
       localStorage.setItem("token", loginResponse.token);
-      //toast.current.show({
-      //  sticky: false,
-      //  severity: "success",
-      //  summary: "sucesso",
-      //  detail: "Validation ok",
-      //});
+      sendToast({
+        severity: "success",
+        summary: "Sucesso",
+        detail: loginResponse.msg,
+      });
+      console.log("redirecting");
+      redirect("/selecionarPerfil");
     } else {
-      //  toast.current.show({
-      //  severity: "error",
-      //  summary: loginResponse.msg,
-      // sticky: false, // TODO: ARRUMAR O TOAST.. ERROS LOGIN.TS SERVER
-      //  });
+      sendToast({
+        severity: "error",
+        summary: "Erro",
+        detail: loginResponse.msg,
+      });
       return;
     }
   }
@@ -109,8 +97,11 @@ const Login = () => {
 
   return (
     <>
-      <form className="content bg-azul-claro py-md" onSubmit={loginFunction}>
-        <Toast ref={toast} />
+      <form
+        id="loginForm"
+        className="content bg-azul-claro py-md"
+        onSubmit={loginFunction}
+      >
         <div className="py-lg flex flex-column align-center">
           <h1 className="py-lg titulo text-orange">Faça seu Login</h1>
           <div className="campo-email pb-lg">
@@ -133,15 +124,13 @@ const Login = () => {
           <Link className="py-lg text-white text-shadow" to="/">
             Esqueci minha senha →
           </Link>
-          <Link to="/selecionarPerfil">
-            <button
-              className="#entrar botao-redondo box-shadow text-button"
-              //onClick={loginHook.execute}
-              id="entrar"
-            >
-              Entrar
-            </button>
-          </Link>
+          <button
+            className="#entrar botao-redondo box-shadow text-button"
+            form="loginForm"
+            id="entrar"
+          >
+            Entrar
+          </button>
 
           <Link className="py-lg text-white text-shadow" to="/cadastro">
             Não possui uma conta →
