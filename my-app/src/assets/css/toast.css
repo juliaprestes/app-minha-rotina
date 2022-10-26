@@ -10,7 +10,7 @@
 }
 
 .toast {
-  width: 200px;
+  width: 240px;
 }
 
 .toast-success {
@@ -39,6 +39,7 @@ b {
   padding: 20px;
   border-radius: 10px;
   color: #a62b38;
+  text-align: center;
 }
 
 .toast-info {

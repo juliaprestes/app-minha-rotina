@@ -30,9 +30,10 @@ export function ToastLayout() {
         {toasts.map((toast, index) => {
           return (
             <div key={index} className={`toast ${selectState(toast.severity)}`}>
-              <b>{toast.summary}</b>
-              <br />
-              {toast.detail}
+              <p>
+                <b>{toast.summary}</b>
+              </p>
+              <p>{toast.detail}</p>
             </div>
           );
         })}

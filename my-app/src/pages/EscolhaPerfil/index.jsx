@@ -7,7 +7,9 @@ const SelecionarPerfil = () => {
     <>
       <form className="content bg-azul-claro py-md">
         <div className="py-lg flex flex-column align-center">
-          <h1 className="py-lg titulo text-orange">Bem vindo!</h1>
+          <h1 className="py-lg titulo text-white">
+            Bem vindo ao <span className="text-orange">MinhaRotina!</span>
+          </h1>
           <p className="text-white text-md mb-xlg">
             Escolha um perfil de acesso:
           </p>

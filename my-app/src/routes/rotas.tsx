@@ -3,8 +3,6 @@ import Home from "../pages/Home/";
 import CadastroUsuario from "../pages/CadastroUsuario/";
 import Login from "../pages/Login/";
 import Pagina404 from "../pages/Pagina404/";
-import AndamentoRotina from "../pages/AndamentoRotina/";
-import Atividades from "../pages/Atividades/";
 import CadastroDependentes from "../pages/CadastroDependentes/";
 import CadastroRotina from "../pages/CadastroRotina";
 import DadosUsuario from "../pages/DadosUsuario/";
@@ -27,8 +25,6 @@ function Rotas() {
           </Route>
           <Route path="/cadastro" element={<CadastroUsuario />} />
           <Route element={<Pagina404 />} />
-          <Route path="/andamentoRotina" element={<AndamentoRotina />} />
-          <Route path="/atividades" element={<Atividades />} />
           <Route path="/cadastroDependente" element={<CadastroDependentes />} />
           <Route path="/cadastroRotina" element={<CadastroRotina />} />
           <Route path="/minhasInformacoes" element={<DadosUsuario />} />

@@ -86,6 +86,12 @@
     align-items: center;
 }
 
+/* WIDTH */
+
+.width-600{
+    width: 600px;
+}
+
 /*ALINHAMENTOS*/
 
 .row-reverse{
@@ -99,6 +105,16 @@
     border-radius: 50px;   
     font-weight: 800;
 
+}
+
+.botao-redondo_link{
+    background-color: #e9ca5b;
+    width: 270px;
+    height: 50px;
+    border-radius: 50px;
+    text-align: center;
+    padding: 15px;
+    font-weight: 800;
 }
 
 .input-rounded{
