@@ -3,16 +3,14 @@ import Home from "../pages/Home/";
 import CadastroUsuario from "../pages/CadastroUsuario/";
 import Login from "../pages/Login/";
 import Pagina404 from "../pages/Pagina404/";
-import CadastroDependentes from "../pages/CadastroDependentes/";
-import CadastroRotina from "../pages/CadastroRotina";
-import DadosUsuario from "../pages/DadosUsuario/";
+import CadastroDependente from "../pages/CadastroDependentes/";
 import SelecionarPerfil from "../pages/EscolhaPerfil";
 import InformacoesDependente from "../pages/InformacoesDependente/";
 import InicialDependente from "../pages/InicialDependente";
 import Rotinas from "../pages/Rotinas";
-import InicialResponsavel from "../pages/InicialResponsavel";
-import { RecaptchaProvider } from "../components/Wrappers/recaptchaProvider/recaptchaProvider";
+import InicialResponsavel from "../pages/OpcoesResponsavel";
 import { OffsiteLayout } from "../components/Layouts/LayoutOffsite/offsiteLayout";
+import RedefinirSenha from "../pages/RedefinirSenha";
 
 function Rotas() {
   return (
@@ -20,14 +18,9 @@ function Rotas() {
       <Routes>
         <Route element={<OffsiteLayout />}>
           <Route path="/" element={<Home />} />
-          <Route element={<RecaptchaProvider />}>
-            <Route path="/login" element={<Login />} />
-          </Route>
+          <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<CadastroUsuario />} />
-          <Route element={<Pagina404 />} />
-          <Route path="/cadastroDependente" element={<CadastroDependentes />} />
-          <Route path="/cadastroRotina" element={<CadastroRotina />} />
-          <Route path="/minhasInformacoes" element={<DadosUsuario />} />
+          <Route path="/cadastroDependente" element={<CadastroDependente />} />
           <Route path="/selecionarPerfil" element={<SelecionarPerfil />} />
           <Route
             path="/informacoesDependente"
@@ -36,6 +29,8 @@ function Rotas() {
           <Route path="/inicialDependente" element={<InicialDependente />} />
           <Route path="/rotinas" element={<Rotinas />} />
           <Route path="/inicialResponsavel" element={<InicialResponsavel />} />
+          <Route path="/redefinirSenha/:id" element={<RedefinirSenha />} />
+          <Route path="/*" element={<Pagina404 />} />
         </Route>
       </Routes>
     </Router>

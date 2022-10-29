@@ -19,6 +19,7 @@
   padding: 20px;
   border-radius: 10px;
   color: #285a26;
+  text-align: center;
 }
 
 b {
@@ -31,6 +32,7 @@ b {
   padding: 20px;
   border-radius: 10px;
   color: #b6902e;
+  text-align: center;
 }
 
 .toast-error {
@@ -48,4 +50,5 @@ b {
   padding: 20px;
   border-radius: 10px;
   color: #0f4d99;
+  text-align: center;
 }

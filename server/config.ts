@@ -16,6 +16,7 @@ export default class Config {
       user: string
     }
     security: { secret: string }
+    mailInformation: { email: string, senha: string }
   }
 
   public banco: Db | null
@@ -32,6 +33,7 @@ export default class Config {
         user: '',
       },
       security: { secret: '' },
+      mailInformation: { email: '', senha: '' }
     }
     this.banco = null
   }

@@ -6,7 +6,6 @@ import Config from '../../config'
 export default async function createUser(request: Request, response: Response) {
   const { nome, email, senha, tipo } = request.body
 
-  console.log('criando usuario: ', request.body)
 
   const config = await Config.getInstance()
   const banco = config.banco
@@ -43,6 +42,7 @@ export default async function createUser(request: Request, response: Response) {
   const existentUser = await banco
     .collection('usuarios')
     .findOne({ email: email })
+
 
   if (existentUser) {
     return response.status(422).json({

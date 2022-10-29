@@ -1,20 +1,28 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { MdOutlineArrowBack } from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../api/api";
 import sendToast from "../../components/Layouts/LayoutToast/sendToast";
-import { redirect } from "react-router-dom";
-//import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
+//rota ----> /login
 const Login = () => {
-  //const { executeRecaptcha } = useGoogleReCaptcha();
-  //const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const toast = useRef<any>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/inicialResponsavel");
+    }
+  });
+
+  const voltarTelaInicial = () => {
+    navigate("/");
+  };
+
   async function loginFunction(event: React.FormEvent<Element>) {
     event.preventDefault();
     const loginResponse = await login(email, password);
-    console.log("loginResponse", loginResponse);
 
     if (email === "" || password === "") {
       sendToast({
@@ -33,8 +41,7 @@ const Login = () => {
         summary: "Sucesso",
         detail: loginResponse.msg,
       });
-      console.log("redirecting");
-      redirect("/selecionarPerfil");
+      navigate("/selecionarPerfil");
     } else {
       sendToast({
         severity: "error",
@@ -44,40 +51,6 @@ const Login = () => {
       return;
     }
   }
-  //const obterAccessToken = async (tokenRecaptcha: string) => {
-  // try {
-  //   if (password && email !== undefined) {
-  //     const loginRequest = {
-  //      username: email.toString(),
-  //       senha: password,
-  //     tokenRecaptcha: tokenRecaptcha,
-  //   };
-
-  //       const result = await UsuarioRepository.logar(loginRequest);
-
-  //       if (result.autenticado === true) {
-  //         localStorage.setItem("token", result.token);
-  //         navigate("/EscolhaPerfil");
-  //       }
-  //       // } else {
-  //       //   //TODO: toast, msg erro***
-  //       //   /*setMensagem({
-  //       //     severity: "error",
-
-  //       //     texto: "Todos os campos devem ser preechidos e selecionados.",
-  //       //   });*/
-  //     }
-
-  //     // Erros já geram toasts de erro automaticamente pelo interceptor em api.ts
-
-  //     // eslint-disable-next-line no-empty
-  //   } catch {}
-  // };
-
-  // const getRecaptchaThenLogin = React.useCallback(async () => {
-  //   const token = await executeRecaptcha("verify");
-  //   obterAccessToken(token);
-  // }, [password, username]);
 
   const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -87,16 +60,16 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
-  // document?.addEventListener("keyup", (e) => {
-  //   if (e.key === "Enter") {
-  //     loginHook.execute().catch(() => {});
-  //     new Promise((resolve) => setTimeout(resolve, 5000)).catch();
-  //     return;
-  //   }
-  // });
+  //function limpar() {
+  //  setEmail("");
+  //  setPassword("");
+  //}
 
   return (
     <>
+      <div style={{ position: "absolute" }} onClick={voltarTelaInicial}>
+        <MdOutlineArrowBack />
+      </div>
       <form
         id="loginForm"
         className="content bg-azul-claro py-md"

@@ -15,6 +15,16 @@ const routes: {
       function: require('../packages/auth/createUser').default,
       type: 'post'
     },
+    {
+      route: '/auth/lost-pass',
+      function: require('../packages/auth/lostPass').default,
+      type: 'post'
+    },
+    {
+      route: '/auth/redefine-pass',
+      function: require('../packages/auth/redefinePass').default,
+      type: 'post'
+    },
   ]
 
 export default routes

@@ -24,4 +24,11 @@ export async function crateUser(nome: string, email: string, senha: string, tipo
   return response.data
 }
 
+export async function redefinePass(chave: string, senha: string) {
+
+  const response = await api.post('/auth/redefine-pass', { chave, senha }, { validateStatus: null })
+  return response.data
+
+}
+
 //get, post, get, delete
