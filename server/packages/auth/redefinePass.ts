@@ -39,3 +39,4 @@ export default async function lostPass(request: Request, response: Response) {
         msg: 'Sucesso ao trocar de senha',
     })
 }
+

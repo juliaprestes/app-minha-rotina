@@ -44,7 +44,7 @@ export default async function lostPass(request: Request, response: Response) {
 
     const mailOptions = {
         from: 'contatojuliaprestes@gmail.com',
-        to: 'filipeclegnani@gmail.com',
+        to: 'prestesjulea@gmail.com',
         subject: 'Redefinição de senha',
         html: `<a href="localhost:3000/redefinirSenha/${chave}">Redefinir senha<a>`
     };
@@ -58,3 +58,4 @@ export default async function lostPass(request: Request, response: Response) {
         msg: 'Sucesso ao requisitar troca de senha',
     })
 }
+

@@ -18,12 +18,9 @@ const Cabecalho = () => {
   }
 
   return (
-    <header className="header-cabecalho flex flex-between flex-align-center bg-azul">
-      <div className="header-cabecalho flex flex-between flex-align-center bg-azul ">
-        <Link
-          to="/"
-          className="header-cabecalho__links flex flex-align-center gap"
-        >
+    <header className="header-cabecalho flex flex-between align-center bg-azul">
+      <div className="flex flex-between flex-align-center bg-azul ">
+        <Link to="/" className="header-cabecalho__links flex align-center gap">
           <img className="img-cabecalho" src={imagem} alt="Logo Rotimy" />
           <h1 className="titulo-cabecalho text-orange">Minha Rotina</h1>
         </Link>
@@ -33,22 +30,28 @@ const Cabecalho = () => {
           <ul className="menu-opcoes gap"></ul>
         </nav>
       </div>
-      <div className="text-orange">
-        <GiHamburgerMenu onClick={toggle} />
+      {/*  */}
+      <div className="flex flex-between gap align-center">
+        <div className="text-orange cursor-pointer">
+          <GiHamburgerMenu onClick={toggle} />
+        </div>
         {ativo ? (
-          <div className="" style={{}}>
-            <ul>
-              <li>Meus Dados</li>
-              <li>Informações do site</li>
-              <div onClick={logout}>
-                <li>Logout</li>
-              </div>
-            </ul>
+          <div className="enabled text-orange" style={{}}>
+            <div className="cursor-pointer my-md" onClick={logout}>
+              <p>Meus Dados</p>
+            </div>
+            <div className="cursor-pointer my-md" onClick={logout}>
+              <p>Informações do site</p>
+            </div>
+            <div className="cursor-pointer my-md" onClick={logout}>
+              <p>Logout</p>
+            </div>
           </div>
         ) : (
-          ""
+          <div className="disabled" />
         )}
       </div>
+      {/*  */}
     </header>
   );
 };

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { MdOutlineArrowBack } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../api/api";
 import sendToast from "../../components/Layouts/LayoutToast/sendToast";
@@ -15,10 +14,6 @@ const Login = () => {
       navigate("/inicialResponsavel");
     }
   });
-
-  const voltarTelaInicial = () => {
-    navigate("/");
-  };
 
   async function loginFunction(event: React.FormEvent<Element>) {
     event.preventDefault();
@@ -67,9 +62,6 @@ const Login = () => {
 
   return (
     <>
-      <div style={{ position: "absolute" }} onClick={voltarTelaInicial}>
-        <MdOutlineArrowBack />
-      </div>
       <form
         id="loginForm"
         className="content bg-azul-claro py-md"
@@ -105,9 +97,17 @@ const Login = () => {
             Entrar
           </button>
 
-          <Link className="py-lg text-white text-shadow" to="/cadastro">
+          <Link className="my-lg text-white text-shadow" to="/cadastro">
             Não possui uma conta →
           </Link>
+
+          {/* <div
+            className="text-md text-white flex align-center cursor-pointer"
+            onClick={voltarTelaInicial}
+          >
+            <MdOutlineArrowBack />
+            <p className="pl-md">Voltar</p>
+          </div> */}
         </div>
       </form>
     </>

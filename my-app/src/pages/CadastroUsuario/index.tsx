@@ -14,10 +14,6 @@ const Cadastrar = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const voltarTelaLogin = () => {
-    navigate("/login");
-  };
-
   async function callApi() {
     setLoading(true);
     if (password.length < 8) {
@@ -66,9 +62,6 @@ const Cadastrar = () => {
 
   return (
     <>
-      <div style={{ position: "absolute" }} onClick={voltarTelaLogin}>
-        <MdOutlineArrowBack />
-      </div>
       <body className="content">
         <section className=" bg-azul-claro py-md">
           <div className="py-lg flex flex-column align-center">
