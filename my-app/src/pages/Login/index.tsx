@@ -90,7 +90,7 @@ const Login = () => {
             Esqueci minha senha →
           </Link>
           <button
-            className="#entrar botao-redondo box-shadow text-button"
+            className="#entrar botao-redondo box-shadow text-button text-orange bg-amarelo"
             form="loginForm"
             id="entrar"
           >
