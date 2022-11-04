@@ -96,7 +96,7 @@ const Cadastrar = () => {
               />
             </div>
             <button
-              className="my-xl botao-redondo box-shadow text-button "
+              className="my-xl botao-redondo box-shadow text-button text-orange bg-amarelo"
               onClick={createUserHook.execute}
               disabled={loading}
             >
