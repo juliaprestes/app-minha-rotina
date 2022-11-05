@@ -24,8 +24,15 @@ const RedefinirSenha = () => {
 
   async function sendPassFunction(event: React.FormEvent<Element>) {
     event.preventDefault();
-    // validar equalidade da senha
     if (!id) {
+      return;
+    }
+    if (senha1 !== senha2) {
+      sendToast({
+        severity: "error",
+        summary: "Senha inválida",
+        detail: "As senhas precisam ser iguais",
+      });
       return;
     }
     const response = await redefinePass(id, senha1);
@@ -45,7 +52,6 @@ const RedefinirSenha = () => {
     }
   }
 
-  console.log(id);
   return (
     <>
       <form className="content bg-azul-claro py-md" onSubmit={sendPassFunction}>
