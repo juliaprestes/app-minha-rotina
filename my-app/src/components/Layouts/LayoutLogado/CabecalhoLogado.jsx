@@ -16,7 +16,7 @@ const CabecalhoLogado = () => {
     <header className="header-cabecalho flex flex-between flex-align-center bg-azul">
       <div className="">
         <Link
-          to="/"
+          to="/selecionarPerfil"
           className="header-cabecalho__links flex flex-align-center gap"
         >
           <img className="img-cabecalho" src={imagem} alt="Logo Rotimy" />
