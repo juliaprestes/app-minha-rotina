@@ -10,11 +10,6 @@ export const api = axios.create({
   baseURL: "http://localhost:3001",
 });
 
-export const busca = async (url: string, setDado: any) => {
-  const resposta = await api.get(url);
-  setDado(resposta.data);
-};
-
 export async function login(email: string, senha: string): Promise<LoginResponse> {
   const response = await api.post('/auth/login', { email, senha }, { validateStatus: null })
   return response.data
@@ -25,10 +20,8 @@ export async function crateUser(nome: string, email: string, senha: string, tipo
 }
 
 export async function redefinePass(chave: string, senha: string) {
-
   const response = await api.post('/auth/redefine-pass', { chave, senha }, { validateStatus: null })
   return response.data
-
 }
 
 //get, post, get, delete

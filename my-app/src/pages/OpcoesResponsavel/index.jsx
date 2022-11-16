@@ -16,29 +16,24 @@ const InicialResponsavel = () => {
 
   return (
     <>
-      <body className="content bg-azul-claro">
+      <div className="content bg-azul-claro">
         <section className="py-md">
           <div className="py-lg flex flex-column align-center">
             <h1 className="mt-lg titulo text-orange">
               Olá {decodedToken.nome}!
             </h1>
             <h1 className="mb-lg text-center titulo width-600 text-orange">
-              Aqui você poderá incentivar de seu filho a ter independência
+              Aqui você poderá incentivar de seu filho a ter independência, crie
+              sua rotina na opção abaixo:
             </h1>
             <div className="my-xl flex gap">
-              <Link className="text-orange-100" to="/cadastroDependente">
-                <div className="botao-redondo_link">CADASTRAR DEPENDENTE</div>
-              </Link>
-              <Link className="text-orange-100" to="/informacoesDependente">
-                <div className="botao-redondo_link">CONSULTAR DEPENDENTE</div>
-              </Link>
               <Link className="text-orange-100" to="/rotinas">
-                <div className="botao-redondo_link">ROTINAS</div>
+                <div className="botao-redondo_link">CRIAR NOVA</div>
               </Link>
             </div>
           </div>
         </section>
-      </body>
+      </div>
     </>
   );
 };

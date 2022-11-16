@@ -11,24 +11,27 @@ import { IconContext } from "react-icons";
 
 import "../../assets/css/components/navbar.css";
 
+let sidebar = false;
+
 function Navbar() {
-  const [sidebar, setSidebar] = useState(false);
+  const [, update] = useState(new Date());
 
   function showSidebar() {
-    setSidebar(!sidebar);
+    sidebar = !sidebar;
+    update(new Date());
   }
 
   return (
     <>
       <IconContext.Provider value={{ color: "#E8C64A" }}>
         <div className="navbar">
-          <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} />
+          <Link to="#" className="menu-bars ">
+            <FaIcons.FaBars onClick={() => showSidebar()} />
           </Link>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-          <ul className="nav-menu-items" onClick={showSidebar}>
-            <li className="navbar-toggle">
+          <ul className="nav-menu-items" onClick={() => showSidebar()}>
+            <li className="navbar-toggle ">
               <Link to="#" className="menu-bars">
                 <AiIcons.AiOutlineClose />
               </Link>

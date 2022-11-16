@@ -1,13 +1,12 @@
 .navbar {
     background-color: #3065AC;
-    height: 80px;
     display: flex;
     justify-content: start;
     align-items: center;
   }
   
   .menu-bars {
-    margin-left: 2rem;
+    margin-left: 10rem;
     font-size: 2rem;
     background: none;
   }
@@ -20,12 +19,12 @@
     justify-content: center;
     position: fixed;
     top: 0;
-    left: -100%;
+    left: 100%;
     transition: 850ms;
   }
   
   .nav-menu.active {
-    left: 0;
+    left: 85%;
     transition: 350ms;
   }
   
