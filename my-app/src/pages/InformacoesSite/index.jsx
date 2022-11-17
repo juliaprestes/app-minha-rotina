@@ -1,8 +1,10 @@
 import React from "react";
+import useVerifyToken from "../../components/useVerifyToken";
 
-//rota ----> /meusDados
+//rota ----> /informacoes
 
 const InformacoesSite = () => {
+  useVerifyToken();
   return (
     <>
       <main className="container flex flex--centro flex--coluna content bg-azul-claro py-md">

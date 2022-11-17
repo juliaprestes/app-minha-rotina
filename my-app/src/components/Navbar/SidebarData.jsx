@@ -34,5 +34,8 @@ export const SidebarData = [
     path: "/",
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: "nav-text",
+    onclick: () => {
+      localStorage.removeItem("token");
+    },
   },
 ];

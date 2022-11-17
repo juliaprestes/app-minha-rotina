@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { SlUser, SlPeople } from "react-icons/sl";
+import useVerifyToken from "../../components/useVerifyToken";
 
 // ROTA ------> /selecionarPerfil
 const SelecionarPerfil = () => {
+  useVerifyToken();
   return (
     <>
       <form className="content bg-azul-claro py-md">

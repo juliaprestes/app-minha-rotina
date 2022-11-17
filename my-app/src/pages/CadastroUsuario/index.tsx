@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { MdOutlineArrowBack } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { crateUser, login } from "../../api/api";
 import sendToast from "../../components/Layouts/LayoutToast/sendToast";

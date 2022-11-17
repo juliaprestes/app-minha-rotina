@@ -4,14 +4,6 @@ import "../../../assets/css/components/cabecalho.css";
 import Navbar from "../../Navbar/Navbar";
 
 const CabecalhoLogado = () => {
-  //const [ativo, setAtivo] = useState(false);
-  //const navigate = useNavigate();
-
-  /*function logout() {
-    localStorage.removeItem("token");
-    navigate("/login");
-  }*/
-
   return (
     <header className="header-cabecalho flex flex-between flex-align-center bg-azul">
       <div className="">

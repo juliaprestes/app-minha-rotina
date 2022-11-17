@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { crateUser, login } from "../../api/api";
 import sendToast from "../../components/Layouts/LayoutToast/sendToast";
+import useVerifyToken from "../../components/useVerifyToken";
 import useAsync from "../../utils/useAsync";
 
 //rota ----> /meusDados
@@ -12,6 +13,8 @@ const DadosResponsavel = () => {
   const createUserHook = useAsync(callApi, false);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+
+  useVerifyToken();
 
   async function callApi() {
     setLoading(true);

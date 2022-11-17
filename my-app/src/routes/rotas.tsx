@@ -27,6 +27,7 @@ function Rotas() {
           <Route path="/redefinirSenha/:id" element={<RedefinirSenha />} />
           <Route path="/informacoes" element={<InformacoesSite />} />
           <Route path="/meusDados" element={<DadosResponsavel />} />
+          <Route path="/redefinirSenha" element={<RedefinirSenha />} />
           <Route path="/*" element={<Pagina404 />} />
         </Route>
       </Routes>

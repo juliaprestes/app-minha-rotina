@@ -1,20 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../assets/css/components/rotinas.css";
 import Atividades from "../../components/Rotina/Atividades";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
+import useVerifyToken from "../../components/useVerifyToken";
+import Popup from "../../components/Popup/Popup";
+import useAsync from "../../utils/useAsync";
+import { createRoutine } from "../../api/api";
+import sendToast from "../../components/Layouts/LayoutToast/sendToast";
+
+// rota ---> /rotinas
 
 const Rotinas = () => {
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const [timePopup, setTimePopup] = useState(false);
+  const token = useVerifyToken();
+  // const createUserHook = useAsync(sendCreateRoutine, false);
+  // const [nome, setNome] = useState("");
+  // const [imagem, setImagem] = useState("");
+  // const [recompensa, setRecompensa] = useState("");
+
+  // const token = useVerifyToken() as any;
+
+  // useEffect(() => {
+  //   createUserHook.execute();
+  // });
+  // async function sendCreateRoutine() {
+  //   const response = await createRoutine(
+  //     nome,
+  //     imagem,
+  //     recompensa,
+  //     token?.token
+  //   );
+  //   if (response.key === "sucessfulyRoutineCreated") {
+  //     sendToast({
+  //       severity: "success",
+  //       summary: "Sucesso",
+  //       detail: "Sucesso ao criar rotina",
+  //     });
+  //   } else {
+  //     sendToast({
+  //       severity: "error",
+  //       summary: "Erro inesperado ao selecion atividades",
+  //     });
+  //   }
+  // }
+
   //TODO: FAZER A TABELA DE ATIVIDADES
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  }));
 
   return (
     <>
@@ -47,6 +77,36 @@ const Rotinas = () => {
             </div>
 
             <Atividades />
+
+            <button
+              className="#entrar botao-redondo box-shadow text-button text-orange bg-amarelo "
+              form="loginForm"
+              id="entrar"
+              onClick={() => setButtonPopup(true)}
+            >
+              Teste popup
+            </button>
+            <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+              <h3>PARABÉNS!! VOCÊ CONCLUIU SUA ATIVIDADE</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex enim
+                quis maxime officia asperiores laborum, iusto, quasi adipisci
+                consequatur hic aut perferendis aliquid. Nobis rerum enim illum
+                voluptas suscipit, eaque illo necessitatibus perspiciatis quasi
+                et quaerat quisquam corporis ipsam reprehenderit.
+              </p>
+            </Popup>
+
+            <Popup trigger={timePopup} setTrigger={setTimePopup}>
+              <h3>My popup</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex enim
+                quis maxime officia asperiores laborum, iusto, quasi adipisci
+                consequatur hic aut perferendis aliquid. Nobis rerum enim illum
+                voluptas suscipit, eaque illo necessitatibus perspiciatis quasi
+                et quaerat quisquam corporis ipsam reprehenderit.
+              </p>
+            </Popup>
           </div>
           <div className="flex flex-around">
             <button

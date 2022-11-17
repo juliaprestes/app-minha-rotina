@@ -1,19 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import getToken from "../../components/getToken";
-import { useNavigate } from "react-router-dom";
+import useVerifyToken from "../../components/useVerifyToken";
 
 //rota ----> /inicialResponsavel
 
 const InicialResponsavel = () => {
-  const decodedToken = getToken(localStorage.getItem("token"));
-  const navigate = useNavigate();
-
+  const decodedToken = useVerifyToken();
   if (!decodedToken) {
-    navigate("/");
-    return <></>;
+    return null;
   }
-
   return (
     <>
       <div className="content bg-azul-claro">
