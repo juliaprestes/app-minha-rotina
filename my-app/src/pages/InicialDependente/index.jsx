@@ -3,13 +3,15 @@ import { getRoutine } from "../../api/api";
 import useVerifyToken from "../../components/useVerifyToken";
 import useAsync from "../../utils/useAsync";
 import sendToast from "../../components/Layouts/LayoutToast/sendToast";
+import Popup from "../../components/Popup/Popup";
 
 //rota ----> /inicialDependente
 
 const InicialDependente = () => {
-  const createUserHook = useAsync(loadRoutines, false);
   const [routines, setRoutines] = useState([]);
+  const [buttonPopup, setButtonPopup] = useState(false);
   const token = useVerifyToken();
+  const createUserHook = useAsync(loadRoutines, false);
 
   useEffect(() => {
     createUserHook.execute();
@@ -51,6 +53,26 @@ const InicialDependente = () => {
               </div>
             ))}
           </div>
+
+          <button
+            className="#entrar botao-redondo box-shadow text-button text-orange bg-amarelo "
+            form="loginForm"
+            id="entrar"
+            onClick={() => setButtonPopup(true)}
+          >
+            Teste popup
+          </button>
+
+          <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+            <h3>PARABÉNS!! VOCÊ CONCLUIU SUA ATIVIDADE</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex enim
+              quis maxime officia asperiores laborum, iusto, quasi adipisci
+              consequatur hic aut perferendis aliquid. Nobis rerum enim illum
+              voluptas suscipit, eaque illo necessitatibus perspiciatis quasi et
+              quaerat quisquam corporis ipsam reprehenderit.
+            </p>
+          </Popup>
         </div>
       </main>
     </>

@@ -1,0 +1,39 @@
+
+.ui-button {
+    border-radius: 10px !important;
+    font-weight: 900;
+    background-color: #f8eb37;
+    display: flex;
+    align-items: center;
+    padding: 14px 12px;
+    width: 200px;
+    margin: 10px;
+    color:#3065AC;
+}
+.ui-button-green{
+    border-radius: 10px !important;
+    font-weight: 900;
+    background-color: #ffa500;
+    display: flex;
+    align-items: center;
+    padding: 14px 12px;
+    width: 200px;
+    margin: 10px;
+    color:#ff6400;
+}
+.ui-button:hover {
+    background-color: #ffff00;
+}
+
+.ui-button:active {
+    background-color: #5dda59;
+}
+
+
+.dimensao-img{
+    width: 70px;
+    height: 70px;
+}
+
+
+

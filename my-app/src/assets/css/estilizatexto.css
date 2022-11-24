@@ -71,6 +71,8 @@
 
 .font-text-bold {
     font-weight: 700;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #0000;
 }
 
 .font-text-black {

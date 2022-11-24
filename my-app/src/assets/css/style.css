@@ -5,11 +5,11 @@
     font-size: 100%;
     font: inherit;
     text-decoration: none;
-    font-family: 'Lato', sans-serif;
+    font-family: "Figtree", sans-serif;
 
 }
 
-/*DISPLAY FLEX */
+/*DISPLAY FLEX */ 
 
 .flex {
     display: flex;       
@@ -31,6 +31,7 @@
 .flex-column{
     flex-direction: column;
 }
+
 /*PADDING*/
 
 .py-md{
@@ -72,6 +73,13 @@
     padding-left: 2rem;
 }
 
+.pg{
+    margin: 2rem ;
+}
+
+.py-both{
+    margin: 5px;
+}
 /* MARGINS */
 
 .my-sm{
@@ -109,6 +117,8 @@
     margin-bottom: 5rem;
 }
 
+
+
 /*FOOTER*/
 
 .container{
@@ -123,6 +133,16 @@
     width: 600px;
 }
 
+.tabela{
+    flex-flow: wrap;
+    justify-content: flex-end;
+    margin-right: 40px;
+    width: 1000px;
+}
+
+.margin-around{
+    margin: 0px 100px 100px;
+}
 /*ALINHAMENTOS*/
 
 .row-reverse{
@@ -130,11 +150,10 @@
 }
 
 .botao-redondo{
-    width: 180px;
-    height: 50px;
+    min-width: 180px;
+    min-height: 50px;
     border-radius: 50px;   
     font-weight: 800;
-
 }
 
 .botao-redondo_link{
@@ -167,17 +186,6 @@
 .cursor-pointer{
     cursor: pointer;
 }
-
-/* DISABLE & ENABLE - Menu Hamburguer */
-
-.enabled{
-    display: block !important;
-}
-
-.disabled{
-    display: none;
-}
-
 
 
 /* Medias Query */
