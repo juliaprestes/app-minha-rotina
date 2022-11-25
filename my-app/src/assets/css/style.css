@@ -208,3 +208,8 @@ align-self: center;
         min-height: 791px;      
     }   
 }
+@media (max-width: 1500px) {
+    .content{
+        min-height: 700px;      
+    }   
+}
