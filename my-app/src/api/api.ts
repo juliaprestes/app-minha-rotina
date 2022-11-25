@@ -24,12 +24,13 @@ export async function redefinePass(chave: string, senha: string) {
   return response.data
 }
 
-export async function createRoutine(nome: string, imagem: string, recompensa: string, token: string) {
-  const response = await api.post('api/create-routine', { nome, imagem, recompensa, token }, { validateStatus: null })
+export async function createRoutine(routinesToSave: { nome: string, atividades: string[], recompensa: string }, token: string) {
+  const response = await api.post('api/create-routine', { routinesToSave, token }, { validateStatus: null })
   return response.data
 }
 
 export async function getRoutine(token: string) {
+  console.log('rotina solicitada')
   const response = await api.post('/api/get-routines', { token }, { validateStatus: null })
   return response.data
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../../assets/css/components/popup/popup.css";
 
 function Popup(props: any) {

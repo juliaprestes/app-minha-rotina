@@ -13,13 +13,13 @@
 .ui-button-green{
     border-radius: 10px !important;
     font-weight: 900;
-    background-color: #ffa500;
+    background-color:  #41f837;
     display: flex;
     align-items: center;
     padding: 14px 12px;
     width: 200px;
     margin: 10px;
-    color:#ff6400;
+    color:#3065AC;
 }
 .ui-button:hover {
     background-color: #ffff00;

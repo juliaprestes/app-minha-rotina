@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import useVerifyToken from "../../components/useVerifyToken";
-import Popup from "../../components/Popup/Popup";
-import almoco from "../../assets/img/atividadesRotina/almoco.png";
+import almocar from "../../assets/img/atividadesRotina/almoco.png";
 import brincar from "../../assets/img/atividadesRotina/brincar.png";
 import cafe from "../../assets/img/atividadesRotina/cafe.png";
 import dormir from "../../assets/img/atividadesRotina/dormir.png";
 import escovarDente from "../../assets/img/atividadesRotina/escovarDente.png";
-import lavarmao from "../../assets/img/atividadesRotina/lavarmao.png";
+import lavarMao from "../../assets/img/atividadesRotina/lavarmao.png";
 import pentearCabelo from "../../assets/img/atividadesRotina/pentearCabelo.png";
 import tomarBanho from "../../assets/img/atividadesRotina/tomarbanho.png";
 import useAsync from "../../utils/useAsync";
@@ -17,39 +16,51 @@ import UIButton from "../../components/Button/Button";
 // rota ---> /rotinas
 
 const Rotinas = () => {
-  const token = useVerifyToken();
-  // const createUserHook = useAsync(sendCreateRoutine, false);
-  // const [nome, setNome] = useState("");
-  // const [imagem, setImagem] = useState("");
-  // const [recompensa, setRecompensa] = useState("");
-
-  // const token = useVerifyToken() as any;
-
+  const token = useVerifyToken() as any;
+  const createUserHook = useAsync(sendCreateRoutine, false);
+  const [atividades, setAtividades] = useState<string[]>([]);
+  const [nomeRotina, setNomeRotina] = useState("");
+  const [recompensa, setRecompensa] = useState("");
   // useEffect(() => {
   //   createUserHook.execute();
-  // });
-  // async function sendCreateRoutine() {
-  //   const response = await createRoutine(
-  //     nome,
-  //     imagem,
-  //     recompensa,
-  //     token?.token
-  //   );
-  //   if (response.key === "sucessfulyRoutineCreated") {
-  //     sendToast({
-  //       severity: "success",
-  //       summary: "Sucesso",
-  //       detail: "Sucesso ao criar rotina",
-  //     });
-  //   } else {
-  //     sendToast({
-  //       severity: "error",
-  //       summary: "Erro inesperado ao selecion atividades",
-  //     });
-  //   }
-  // }
+  // }, []);
 
-  //TODO: FAZER A TABELA DE ATIVIDADES
+  async function sendCreateRoutine() {
+    const response = await createRoutine(
+      { nome: nomeRotina, atividades, recompensa },
+      token?.token
+    );
+    if (response.key === "sucessfulyRoutineCreated") {
+      sendToast({
+        severity: "success",
+        summary: "Sucesso",
+        detail: "Sucesso ao criar rotina",
+      });
+    } else {
+      sendToast({
+        severity: "error",
+        summary: "Erro inesperado ao selecion atividades",
+      });
+    }
+  }
+
+  function handleChangeNomeRotina(event: React.ChangeEvent<HTMLInputElement>) {
+    setNomeRotina(event.target.value);
+  }
+
+  function handleChangeRecompensa(event: React.ChangeEvent<HTMLInputElement>) {
+    setRecompensa(event.target.value);
+  }
+
+  function addicionaAtividade(nome: string) {
+    const index = atividades.indexOf(nome);
+    if (index !== -1) {
+      atividades.splice(index, 1);
+      setAtividades(atividades);
+      return;
+    }
+    setAtividades([...atividades, nome]);
+  }
 
   return (
     <>
@@ -67,30 +78,86 @@ const Rotinas = () => {
                   <h2 className="pb-sm text-white">Nome:</h2>
                   <input
                     className="input-rounded box-shadow"
-                    type="email"
-                    //onChange={(e) => handleChangeEmail(e)}
+                    type="text"
+                    onChange={handleChangeNomeRotina}
                   />
                 </div>
                 <div className="py-both">
                   <h2 className="pb-sm text-white ">Definir recompensa:</h2>
                   <input
                     className="input-rounded box-shadow"
-                    type="password"
-                    //onChange={(e) => handleChangePassword(e)}
+                    type="text"
+                    onChange={handleChangeRecompensa}
                   />
                 </div>
               </div>
             </div>
 
             <div className="flex tabela">
-              <UIButton image={almoco}>ALMOÇAR</UIButton>
-              <UIButton image={brincar}>BRINCAR</UIButton>
-              <UIButton image={cafe}>TOMAR CAFÉ</UIButton>
-              <UIButton image={dormir}>DORMIR</UIButton>
-              <UIButton image={escovarDente}>ESCOVAR O DENTE</UIButton>
-              <UIButton image={lavarmao}>LAVAR A MÃO</UIButton>
-              <UIButton image={pentearCabelo}>PENTEAR O CABELO</UIButton>
-              <UIButton image={tomarBanho}>TOMAR BANHO</UIButton>
+              <UIButton
+                image={almocar}
+                onClick={() => {
+                  addicionaAtividade("almocar");
+                }}
+              >
+                ALMOÇAR
+              </UIButton>
+              <UIButton
+                onClick={() => {
+                  addicionaAtividade("brincar");
+                }}
+                image={brincar}
+              >
+                BRINCAR
+              </UIButton>
+              <UIButton
+                onClick={() => {
+                  addicionaAtividade("tomarCafe");
+                }}
+                image={cafe}
+              >
+                TOMAR CAFÉ
+              </UIButton>
+              <UIButton
+                onClick={() => {
+                  addicionaAtividade("dormir");
+                }}
+                image={dormir}
+              >
+                DORMIR
+              </UIButton>
+              <UIButton
+                onClick={() => {
+                  addicionaAtividade("escovarDente");
+                }}
+                image={escovarDente}
+              >
+                ESCOVAR O DENTE
+              </UIButton>
+              <UIButton
+                onClick={() => {
+                  addicionaAtividade("lavarMao");
+                }}
+                image={lavarMao}
+              >
+                LAVAR A MÃO
+              </UIButton>
+              <UIButton
+                onClick={() => {
+                  addicionaAtividade("pentearCabelo");
+                }}
+                image={pentearCabelo}
+              >
+                PENTEAR O CABELO
+              </UIButton>
+              <UIButton
+                onClick={() => {
+                  addicionaAtividade("tomarBanho");
+                }}
+                image={tomarBanho}
+              >
+                TOMAR BANHO
+              </UIButton>
             </div>
           </div>
 
@@ -99,6 +166,9 @@ const Rotinas = () => {
               className="#entrar botao-redondo box-shadow text-button text-orange bg-amarelo "
               form="loginForm"
               id="entrar"
+              onClick={() => {
+                createUserHook.execute();
+              }}
             >
               Salvar
             </button>

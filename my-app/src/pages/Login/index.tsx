@@ -100,14 +100,6 @@ const Login = () => {
           <Link className="my-lg text-white text-shadow" to="/cadastro">
             Não possui uma conta →
           </Link>
-
-          {/* <div
-            className="text-md text-white flex align-center cursor-pointer"
-            onClick={voltarTelaInicial}
-          >
-            <MdOutlineArrowBack />
-            <p className="pl-md">Voltar</p>
-          </div> */}
         </div>
       </form>
     </>

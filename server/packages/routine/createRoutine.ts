@@ -6,7 +6,7 @@ import validateToken from "../../utils/validateToken";
 export default async function lostPass(request: Request, response: Response) {
   const config = await Config.getInstance();
   const banco = config.banco;
-  const { nome, imagem, recompensa, token } = request.body;
+  const { routinesToSave, token } = request.body;
 
   if (!banco) {
     return response
@@ -17,16 +17,14 @@ export default async function lostPass(request: Request, response: Response) {
 
   const tokenValidated = await validateToken(token)
 
-  console.log(tokenValidated)
   if (!tokenValidated) {
     return response.status(301).redirect('http://localhost:3000/login')
   }
+
   await banco.collection('rotinas').insertOne(
     {
       userId: tokenValidated.id,
-      nome,
-      imagem,
-      recompensa,
+      routine: routinesToSave,
       created_at: new Date()
     },
   )

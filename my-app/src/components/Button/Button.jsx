@@ -7,9 +7,8 @@ const UIButton = (props) => {
   function handleClick(color) {
     setButtonColor(!buttonColor);
   }
-
   return (
-    <div className="flex">
+    <div className="flex" onClick={props.onClick}>
       <button
         style={{ color: buttonColor }}
         onClick={handleClick}

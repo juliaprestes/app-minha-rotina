@@ -76,8 +76,8 @@ const RedefinirSenha = () => {
                 onChange={handleChangePassword2}
               />
             </div>
-            <button className="my-xl botao-redondo box-shadow text-button ">
-              Cadastrar
+            <button className="#entrar botao-redondo box-shadow text-button text-orange bg-amarelo">
+              Confirmar
             </button>
           </div>
         </section>

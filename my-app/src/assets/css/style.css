@@ -32,6 +32,10 @@
     flex-direction: column;
 }
 
+.flex-self{
+align-self: center;
+}
+
 /*PADDING*/
 
 .py-md{
@@ -117,7 +121,10 @@
     margin-bottom: 5rem;
 }
 
-
+.criancas{
+    width: 400px;
+    height: 250px;
+}
 
 /*FOOTER*/
 

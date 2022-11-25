@@ -59,7 +59,7 @@ export default async function lostPass(request: Request, response: Response) {
   const mailOptions = {
     from: "contatojuliaprestes@gmail.com",
     to: existentUser.email,
-    subject: "Redefinição de senha",
+    subject: "Redefinição de senha - Minha Rotina",
     html: htmlToSend,
   };
   transporter.sendMail(mailOptions, function (error, info) {

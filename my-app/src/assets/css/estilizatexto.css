@@ -69,6 +69,11 @@
     text-overflow: ellipsis;
 }
 
+.texto-info{
+    line-height: 1.7;
+    padding: 0px 40px;
+} 
+
 .font-text-bold {
     font-weight: 700;
     -webkit-text-stroke-width: 2px;
