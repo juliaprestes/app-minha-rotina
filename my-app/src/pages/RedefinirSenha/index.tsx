@@ -2,15 +2,15 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { redefinePass } from "../../api/api";
 import sendToast from "../../components/Layouts/LayoutToast/sendToast";
+import useVerifyToken from "../../components/useVerifyToken";
 
 // ROTA ------> /redefinirSenha
 const RedefinirSenha = () => {
-  //TODO: SENHA
   const { id } = useParams();
   const [senha1, setSenha1] = useState("");
   const [senha2, setSenha2] = useState("");
   const navigate = useNavigate();
-
+  useVerifyToken();
   const handleChangePassword1 = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
