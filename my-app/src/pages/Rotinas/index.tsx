@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import useVerifyToken from "../../components/useVerifyToken";
-import almocar from "../../assets/img/atividadesRotina/almoco.png";
-import brincar from "../../assets/img/atividadesRotina/brincar.png";
-import cafe from "../../assets/img/atividadesRotina/cafe.png";
-import dormir from "../../assets/img/atividadesRotina/dormir.png";
-import escovarDente from "../../assets/img/atividadesRotina/escovarDente.png";
-import lavarMao from "../../assets/img/atividadesRotina/lavarmao.png";
-import pentearCabelo from "../../assets/img/atividadesRotina/pentearCabelo.png";
-import tomarBanho from "../../assets/img/atividadesRotina/tomarbanho.png";
+
 import useAsync from "../../utils/useAsync";
 import { createRoutine } from "../../api/api";
 import sendToast from "../../components/Layouts/LayoutToast/sendToast";
@@ -21,9 +14,6 @@ const Rotinas = () => {
   const [atividades, setAtividades] = useState<string[]>([]);
   const [nomeRotina, setNomeRotina] = useState("");
   const [recompensa, setRecompensa] = useState("");
-  // useEffect(() => {
-  //   createUserHook.execute();
-  // }, []);
 
   async function sendCreateRoutine() {
     const response = await createRoutine(
@@ -64,7 +54,7 @@ const Rotinas = () => {
 
   return (
     <>
-      <div className="content bg-azul-claro">
+      <div className="container content bg-azul-claro">
         <section className="py-md">
           <div className="flex flex-column align-center">
             <h1 className="mb-lg titulo  text-orange">
@@ -95,66 +85,66 @@ const Rotinas = () => {
 
             <div className="flex tabela">
               <UIButton
-                image={almocar}
                 onClick={() => {
-                  addicionaAtividade("almocar");
+                  addicionaAtividade("ALMOÇAR");
                 }}
+                image={"ALMOÇAR"}
               >
                 ALMOÇAR
               </UIButton>
               <UIButton
                 onClick={() => {
-                  addicionaAtividade("brincar");
+                  addicionaAtividade("BRINCAR");
                 }}
-                image={brincar}
+                image={"BRINCAR"}
               >
                 BRINCAR
               </UIButton>
               <UIButton
                 onClick={() => {
-                  addicionaAtividade("tomarCafe");
+                  addicionaAtividade("TOMAR CAFÉ");
                 }}
-                image={cafe}
+                image={"TOMAR CAFÉ"}
               >
                 TOMAR CAFÉ
               </UIButton>
               <UIButton
                 onClick={() => {
-                  addicionaAtividade("dormir");
+                  addicionaAtividade("DORMIR");
                 }}
-                image={dormir}
+                image={"DORMIR"}
               >
                 DORMIR
               </UIButton>
               <UIButton
                 onClick={() => {
-                  addicionaAtividade("escovarDente");
+                  addicionaAtividade("ESCOVAR O DENTE");
                 }}
-                image={escovarDente}
+                image={"ESCOVAR O DENTE"}
               >
                 ESCOVAR O DENTE
               </UIButton>
               <UIButton
                 onClick={() => {
-                  addicionaAtividade("lavarMao");
+                  addicionaAtividade("LAVAR A MÃO");
                 }}
-                image={lavarMao}
+                image={"LAVAR A MÃO"}
               >
                 LAVAR A MÃO
               </UIButton>
               <UIButton
                 onClick={() => {
-                  addicionaAtividade("pentearCabelo");
+                  addicionaAtividade("PENTEAR O CABELO");
                 }}
-                image={pentearCabelo}
+                image={"PENTEAR O CABELO"}
               >
                 PENTEAR O CABELO
               </UIButton>
               <UIButton
                 onClick={() => {
-                  addicionaAtividade("tomarBanho");
+                  addicionaAtividade("TOMAR BANHO");
                 }}
-                image={tomarBanho}
+                image={"TOMAR BANHO"}
               >
                 TOMAR BANHO
               </UIButton>
@@ -170,7 +160,7 @@ const Rotinas = () => {
                 createUserHook.execute();
               }}
             >
-              Salvar
+              SALVAR
             </button>
           </div>
         </section>

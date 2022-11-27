@@ -11,13 +11,13 @@ const InicialResponsavel = () => {
   }
   return (
     <>
-      <div className="content bg-azul-claro">
+      <div className="container content bg-azul-claro">
         <section className="py-md">
           <div className="py-lg flex flex-column align-center">
             <h1 className="mt-lg titulo text-orange">
               Olá {decodedToken.nome}!
             </h1>
-            <h1 className="mb-lg text-center titulo width-600 text-orange">
+            <h1 className="mb-lg text-center text-white">
               Aqui você poderá incentivar de seu filho a ter independência, crie
               sua rotina na opção abaixo:
             </h1>

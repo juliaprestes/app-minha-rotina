@@ -11,6 +11,7 @@ import { OffsiteLayout } from "../components/Layouts/LayoutOffsite/offsiteLayout
 import RedefinirSenha from "../pages/RedefinirSenha";
 import InformacoesSite from "../pages/InformacoesSite";
 import DadosResponsavel from "../pages/DadosUsuarioResponsavel";
+import RotinaNaoCadastrada from "../pages/RotinaNaoCadastrada";
 
 function Rotas() {
   return (
@@ -28,6 +29,10 @@ function Rotas() {
           <Route path="/informacoes" element={<InformacoesSite />} />
           <Route path="/meusDados" element={<DadosResponsavel />} />
           <Route path="/redefinirSenha" element={<RedefinirSenha />} />
+          <Route
+            path="/rotinaNaoCadastrada"
+            element={<RotinaNaoCadastrada />}
+          />
           <Route path="/*" element={<Pagina404 />} />
         </Route>
       </Routes>

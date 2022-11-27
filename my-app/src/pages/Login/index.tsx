@@ -64,7 +64,7 @@ const Login = () => {
     <>
       <form
         id="loginForm"
-        className="content bg-azul-claro py-md"
+        className="container content bg-azul-claro py-md"
         onSubmit={loginFunction}
       >
         <div className="py-lg flex flex-column align-center">
@@ -86,7 +86,7 @@ const Login = () => {
             />
           </div>
 
-          <Link className="py-lg text-white text-shadow" to="/">
+          <Link className="py-lg text-white text-shadow" to="/redefinirSenha">
             Esqueci minha senha →
           </Link>
           <button

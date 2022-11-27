@@ -1,7 +1,5 @@
 import React from "react";
 import useVerifyToken from "../../components/useVerifyToken";
-import recompensa from "../../assets/img/informacoesSite/recompensa.png";
-import cognicao from "../../assets/img/informacoesSite/cognicao.png";
 import criancas from "../../assets/img/informacoesSite/criancas.png";
 
 //rota ----> /informacoes
@@ -10,14 +8,14 @@ const InformacoesSite = () => {
   useVerifyToken();
   return (
     <>
-      <div className="content bg-azul-claro">
+      <div className="container content bg-azul-claro">
         <section className="py-md">
           <div className="flex flex-column align-center">
             <h1 className=" titulo text-orange">Informações do site:</h1>
           </div>
           <div className="py-lg flex flex-column ">
-            <div className="mb-lg flex flex-self font-text-bold texto-info">
-              <p className="text-white text-center texto-info">
+            <div className="mb-lg flex flex-self  texto-info">
+              <p className="text-white text-center ">
                 O Minha Rotina foi feito com o intuito de ajudar no
                 desenvolvimento cognitivo e social de crianças dentro do
                 espectro autista!

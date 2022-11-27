@@ -30,7 +30,6 @@ export async function createRoutine(routinesToSave: { nome: string, atividades: 
 }
 
 export async function getRoutine(token: string) {
-  console.log('rotina solicitada')
   const response = await api.post('/api/get-routines', { token }, { validateStatus: null })
   return response.data
 }

@@ -130,6 +130,7 @@ align-self: center;
 
 .container{
     height: 70px;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -146,6 +147,11 @@ align-self: center;
     margin-right: 40px;
     width: 1000px;
 }
+.tabela-crianca{
+    flex-flow: wrap;
+    justify-content: center;
+}
+
 
 .margin-around{
     margin: 0px 100px 100px;

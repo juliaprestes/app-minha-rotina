@@ -8,6 +8,8 @@ const DadosResponsavel = () => {
   //const createUserHook = useAsync(callApi, false);
   const token = useVerifyToken() as any;
 
+  //TODO: EDITAR INFOS
+
   const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
@@ -17,7 +19,7 @@ const DadosResponsavel = () => {
 
   return (
     <>
-      <form className="content bg-azul-claro">
+      <form className="container content bg-azul-claro">
         <section className="py-md">
           <div className="py-lg flex flex-column align-center">
             <h1 className="py-lg titulo text-orange">Meus Dados: </h1>

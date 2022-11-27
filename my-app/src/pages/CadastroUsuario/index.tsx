@@ -61,8 +61,8 @@ const Cadastrar = () => {
 
   return (
     <>
-      <body className="content">
-        <section className=" bg-azul-claro py-md">
+      <body className="container content bg-azul-claro">
+        <section className="  py-md">
           <div className="py-lg flex flex-column align-center">
             <h1 className="py-lg titulo text-orange">
               Bem vindo! Cadastre-se já
