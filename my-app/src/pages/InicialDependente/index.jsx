@@ -12,6 +12,9 @@ const InicialDependente = () => {
   const [buttonPopup, setButtonPopup] = useState(false);
   const [routines, setRoutines] = useState([]);
   let [atividades, setAtividades] = useState([]);
+  let [recompensa, setRecompensa] = useState([]);
+  let [nome, setNome] = useState([]);
+
   const token = useVerifyToken();
   const createUserHook = useAsync(loadRoutines, false);
   const history = useNavigate();
@@ -28,7 +31,12 @@ const InicialDependente = () => {
         setRoutines(routinesResponse.routines);
         const ultimaRotina = routinesResponse.routines.length - 1;
         atividades = routinesResponse.routines[ultimaRotina].routine.atividades;
+        recompensa = routinesResponse.routines[ultimaRotina].routine.recompensa;
+        nome = routinesResponse.routines[ultimaRotina].routine.nome;
+        console.log(nome);
         setAtividades(atividades);
+        setRecompensa(recompensa);
+        setNome(nome);
       }
     } else {
       history("/rotinaNaoCadastrada");
@@ -38,10 +46,14 @@ const InicialDependente = () => {
   return (
     <>
       <div className=" content bg-azul-claro py-md ">
-        <div className=" py-lg flex flex-column align-center">
-          <h1 className="mb-lg titulo text-orange">
+        <div className=" flex flex-column align-center">
+          <h1 className=" titulo text-orange">
             Atividades propostas para o dia de hoje:
           </h1>
+        </div>
+        <div className="text-white flex flex-center flex-column align-center">
+          <p>Rotina: {nome}</p>
+          <p>Recompensa: {recompensa} </p>
         </div>
 
         <div className="py-lg flex tabela-crianca">
@@ -59,7 +71,8 @@ const InicialDependente = () => {
         </div>
 
         <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-          <h3>PARABÉNS!! VOCÊ CONCLUIU SUA ATIVIDADE</h3>
+          <h3>PARABÉNS!</h3>
+          <h2>VOCÊ CONCLUIU SUA ATIVIDADE!</h2>
         </Popup>
       </div>
     </>

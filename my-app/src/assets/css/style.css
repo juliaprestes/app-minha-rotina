@@ -24,6 +24,10 @@
 
 }
 
+.flex-center{ 
+    justify-content: center;
+}
+
 .align-center{
     align-items: center;
 }
@@ -147,6 +151,7 @@ align-self: center;
     margin-right: 40px;
     width: 1000px;
 }
+
 .tabela-crianca{
     flex-flow: wrap;
     justify-content: center;
@@ -160,6 +165,10 @@ align-self: center;
 
 .row-reverse{
     flex-direction: row-reverse;
+}
+
+.flex-row{
+    flex-direction: row;
 }
 
 .botao-redondo{
