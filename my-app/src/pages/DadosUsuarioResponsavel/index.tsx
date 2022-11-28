@@ -11,7 +11,6 @@ const DadosResponsavel = () => {
   const [nome, setNome] = useState("");
   const token = useVerifyToken() as any;
   const navigate = useNavigate();
-  useVerifyToken();
 
   const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -26,7 +25,8 @@ const DadosResponsavel = () => {
     if (!id) {
       return;
     }
-    const response = await changeInfos(id, email, nome);
+    const response = await changeInfos(token.id, email, nome);
+    console.log(response);
     if (response.key === "sucessfulyUpdateInfos") {
       sendToast({
         severity: "success",

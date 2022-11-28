@@ -6,7 +6,7 @@ import bcrypt from "bcrypt";
 export default async function changeInfos(request: Request, response: Response) {
     const config = await Config.getInstance();
     const banco = config.banco;
-    const { email, nome } = request.body;
+    const { token, email, nome } = request.body;
 
     if (!banco) {
         return response.status(500).json({
@@ -19,7 +19,8 @@ export default async function changeInfos(request: Request, response: Response) 
     const existentUser = await banco
         .collection("usuarios")
         .findOne({
-            chave, created_at: { $gt: now.subtract({ hour: 1 }).toDate() },
+            token,
+            created_at: { $gt: now.subtract({ hour: 1 }).toDate() },
             used: false,
         })
 
@@ -32,7 +33,7 @@ export default async function changeInfos(request: Request, response: Response) 
     }
     await banco.collection("usuarios").updateOne(
         {
-            chave,
+            token,
             created_at: { $gt: now.subtract({ hour: 1 }).toDate() },
             used: false,
         },
