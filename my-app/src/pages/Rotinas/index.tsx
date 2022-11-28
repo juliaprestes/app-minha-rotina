@@ -5,6 +5,7 @@ import useAsync from "../../utils/useAsync";
 import { createRoutine } from "../../api/api";
 import sendToast from "../../components/Layouts/LayoutToast/sendToast";
 import UIButton from "../../components/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 // rota ---> /rotinas
 
@@ -14,7 +15,12 @@ const Rotinas = () => {
   const [atividades, setAtividades] = useState<string[]>([]);
   const [nomeRotina, setNomeRotina] = useState("");
   const [recompensa, setRecompensa] = useState("");
+  const navigate = useNavigate();
 
+  function onSubmit() {
+    createUserHook.execute();
+    navigate("/selecionarPerfil");
+  }
   async function sendCreateRoutine() {
     const response = await createRoutine(
       { nome: nomeRotina, atividades, recompensa },
@@ -157,7 +163,7 @@ const Rotinas = () => {
               form="loginForm"
               id="entrar"
               onClick={() => {
-                createUserHook.execute();
+                onSubmit();
               }}
             >
               SALVAR

@@ -1,25 +1,50 @@
 import React, { useState } from "react";
+import { changeInfos } from "../../api/api";
+import sendToast from "../../components/Layouts/LayoutToast/sendToast";
 import useVerifyToken from "../../components/useVerifyToken";
+import { useNavigate, useParams } from "react-router-dom";
 
 //rota ----> /meusDados
 const DadosResponsavel = () => {
+  const { id } = useParams();
   const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  //const createUserHook = useAsync(callApi, false);
+  const [nome, setNome] = useState("");
   const token = useVerifyToken() as any;
-
-  //TODO: EDITAR INFOS
+  const navigate = useNavigate();
+  useVerifyToken();
 
   const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
-  const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
+
+  const handleChangeNome = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNome(event.target.value);
   };
 
+  async function updateInfos(event: React.FormEvent<Element>) {
+    event.preventDefault();
+    if (!id) {
+      return;
+    }
+    const response = await changeInfos(id, email, nome);
+    if (response.key === "sucessfulyUpdateInfos") {
+      sendToast({
+        severity: "success",
+        summary: "Sucesso ao editar informações",
+        detail: "Suas informações foram atualizadas",
+      });
+      navigate("/selecionarPerfil");
+    } else {
+      sendToast({
+        severity: "error",
+        summary: "Falha ao editar informações",
+        detail: response.message,
+      });
+    }
+  }
   return (
     <>
-      <form className="container content bg-azul-claro">
+      <form className=" content bg-azul-claro" onSubmit={updateInfos}>
         <section className="py-md">
           <div className="py-lg flex flex-column align-center">
             <h1 className="py-lg titulo text-orange">Meus Dados: </h1>
@@ -27,17 +52,17 @@ const DadosResponsavel = () => {
               <h2 className="pb-sm text-white">Nome Completo:</h2>
               <input
                 className="input-rounded box-shadow"
-                type="name"
-                value={token.nome}
-                onChange={handleChangeName}
+                type="text"
+                defaultValue={token.nome}
+                onChange={handleChangeNome}
               />
             </div>
             <div className="campo-email pb-lg">
               <h2 className="pb-sm text-white">Email:</h2>
               <input
                 className="input-rounded box-shadow"
-                type="email"
-                value={token.email}
+                type="text"
+                defaultValue={token.email}
                 onChange={handleChangeEmail}
               />
             </div>

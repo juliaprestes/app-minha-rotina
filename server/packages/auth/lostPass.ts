@@ -71,4 +71,5 @@ export default async function lostPass(request: Request, response: Response) {
     key: "sucessfulyPasswordResetRequest",
     msg: "Sucesso ao requisitar troca de senha",
   });
+
 }

@@ -11,7 +11,7 @@ const Login = () => {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      navigate("/inicialResponsavel");
+      navigate("/selecionarPerfil");
     }
   });
 
@@ -28,7 +28,6 @@ const Login = () => {
       return;
     }
 
-    // validar loginResponse
     if (loginResponse.token && loginResponse.key === "loginSuccessfully") {
       localStorage.setItem("token", loginResponse.token);
       sendToast({
@@ -86,7 +85,7 @@ const Login = () => {
             />
           </div>
 
-          <Link className="py-lg text-white text-shadow" to="/redefinirSenha">
+          <Link className="py-lg text-white text-shadow" to="/esquecerSenha">
             Esqueci minha senha →
           </Link>
           <button

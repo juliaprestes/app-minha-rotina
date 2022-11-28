@@ -35,6 +35,11 @@ const routes: {
       function: require("../packages/routine/getRoutine").default,
       type: "post",
     },
+    {
+      route: "/api/change-infos",
+      function: require("../packages/auth/changeInfos").default,
+      type: "post",
+    },
   ];
 
 export default routes;

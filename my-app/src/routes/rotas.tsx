@@ -12,6 +12,7 @@ import RedefinirSenha from "../pages/RedefinirSenha";
 import InformacoesSite from "../pages/InformacoesSite";
 import DadosResponsavel from "../pages/DadosUsuarioResponsavel";
 import RotinaNaoCadastrada from "../pages/RotinaNaoCadastrada";
+import EsquecerSenha from "../pages/EsquecerSenha";
 
 function Rotas() {
   return (
@@ -33,6 +34,7 @@ function Rotas() {
             path="/rotinaNaoCadastrada"
             element={<RotinaNaoCadastrada />}
           />
+          <Route path="/esquecerSenha" element={<EsquecerSenha />} />
           <Route path="/*" element={<Pagina404 />} />
         </Route>
       </Routes>

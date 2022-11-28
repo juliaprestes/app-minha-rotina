@@ -20,6 +20,12 @@ export function OffsiteLayout() {
             <CabecalhoDeslogado />
           </>
         );
+      case "/esquecerSenha":
+        return (
+          <>
+            <CabecalhoDeslogado />
+          </>
+        );
       case "/login":
         return (
           <>

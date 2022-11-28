@@ -3,7 +3,7 @@ import moment from "moment";
 import Config from "../../config";
 import bcrypt from "bcrypt";
 
-export default async function lostPass(request: Request, response: Response) {
+export default async function redefinePass(request: Request, response: Response) {
   const config = await Config.getInstance();
   const banco = config.banco;
   const { chave, senha } = request.body;

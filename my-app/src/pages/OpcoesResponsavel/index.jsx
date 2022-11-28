@@ -11,9 +11,9 @@ const InicialResponsavel = () => {
   }
   return (
     <>
-      <div className="container content bg-azul-claro">
+      <div className=" content bg-azul-claro">
         <section className="py-md">
-          <div className="py-lg flex flex-column align-center">
+          <div className="py-lg flex flex-column align-center flex-center">
             <h1 className="mt-lg titulo text-orange">
               Olá {decodedToken.nome}!
             </h1>
@@ -21,7 +21,7 @@ const InicialResponsavel = () => {
               Aqui você poderá incentivar de seu filho a ter independência, crie
               sua rotina na opção abaixo:
             </h1>
-            <div className="my-xl flex gap">
+            <div className="my-xl  gap ">
               <Link className="text-orange-100" to="/rotinas">
                 <div className="botao-redondo_link">CRIAR NOVA</div>
               </Link>

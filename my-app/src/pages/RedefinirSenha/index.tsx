@@ -67,6 +67,7 @@ const RedefinirSenha = () => {
                 onChange={handleChangePassword1}
               />
             </div>
+
             <div className="campo-email pb-lg">
               <h2 className="pb-sm text-white">Confirme sua senha:</h2>
               <input
@@ -75,7 +76,10 @@ const RedefinirSenha = () => {
                 onChange={handleChangePassword2}
               />
             </div>
-            <button className="#entrar botao-redondo box-shadow text-button text-orange bg-amarelo">
+            <button
+              className="#entrar botao-redondo box-shadow text-button text-orange bg-amarelo"
+              onClick={sendPassFunction}
+            >
               Confirmar
             </button>
           </div>

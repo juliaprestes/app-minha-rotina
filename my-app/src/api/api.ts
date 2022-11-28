@@ -34,10 +34,21 @@ export async function getRoutine(token: string) {
   return response.data
 }
 
-export async function lostPass(token: string) {
-  const response = await api.post('/auth/lost-pass', { token }, { validateStatus: null })
+export async function lostPass(email: string) {
+  const response = await api.post('/auth/lost-pass', { email }, { validateStatus: null })
+  console.log(response)
   return response.data
+
 }
+
+export async function changeInfos(email: string, nome: string, chave: string) {
+  const response = await api.post('/api/change-infos', { email, nome, chave }, { validateStatus: null })
+  console.log(response)
+  return response.data
+
+}
+
+
 
 
 //get, post, get, delete
