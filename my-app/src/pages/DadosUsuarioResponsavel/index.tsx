@@ -28,6 +28,7 @@ const DadosResponsavel = () => {
     const response = await changeInfos(token.id, email, nome);
     console.log(response);
     if (response.key === "sucessfulyUpdateInfos") {
+      localStorage.setItem("token", response.token);
       sendToast({
         severity: "success",
         summary: "Sucesso ao editar informações",
