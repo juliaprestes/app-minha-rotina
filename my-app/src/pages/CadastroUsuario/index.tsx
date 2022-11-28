@@ -34,7 +34,7 @@ const Cadastrar = () => {
       if (loginResult.token && loginResult.key === "loginSuccessfully") {
         localStorage.setItem("token", loginResult.token);
       }
-      navigate("/selecionarPerfil");
+      navigate("/login");
     } else {
       setEmail("");
       setPassword("");
