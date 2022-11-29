@@ -63,8 +63,11 @@ const Rotinas = () => {
       <div className="container content bg-azul-claro">
         <section className="py-md">
           <div className="flex flex-column align-center">
-            <h1 className="mb-lg titulo  text-orange">
-              Defina aqui as atividades e o nome da rotina:
+            <h1 className="mb-lg text-center titulo text-orange">
+              Crie aqui uma nova rotina:
+            </h1>
+            <h1 className="pb-sm text-white">
+              Defina um nome, uma recompensa e selecione as atividades abaixo:
             </h1>
           </div>
           <div className="flex margin-around">
